@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.philips.research.connect</groupId>
-    <artifactId>javascriptCreator</artifactId>
+    <artifactId>fhir-2-angular</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
