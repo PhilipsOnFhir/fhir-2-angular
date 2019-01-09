@@ -1,7 +1,5 @@
 import { Annotation } from './Annotation'
 import { CodeableConcept } from './CodeableConcept'
-import { ConditionClinicalStatusCodesEnum } from './ConditionClinicalStatusCodesEnum'
-import { ConditionVerificationStatusEnum } from './ConditionVerificationStatusEnum'
 import { Condition_Evidence } from './Condition_Evidence'
 import { Condition_Stage } from './Condition_Stage'
 import { DomainResource } from './DomainResource'
@@ -15,14 +13,14 @@ export class Condition      extends DomainResource
 
    static def : string = 'Condition';
    identifier : Identifier [];
-   clinicalStatus : ConditionClinicalStatusCodesEnum ;
-   verificationStatus : ConditionVerificationStatusEnum ;
+   clinicalStatus : CodeableConcept ;
+   verificationStatus : CodeableConcept ;
    category : CodeableConcept [];
    severity : CodeableConcept ;
    code : CodeableConcept ;
    bodySite : CodeableConcept [];
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    onsetDateTime : string ;
    onsetAge : string ;
    onsetPeriod : Period ;

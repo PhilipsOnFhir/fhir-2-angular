@@ -25,7 +25,7 @@ export class Communication      extends DomainResource
    subject : Reference ;
    topic : CodeableConcept ;
    about : Reference [];
-   context : Reference ;
+   encounter : Reference ;
    sent : string ;
    received : string ;
    recipient : Reference [];

@@ -8,5 +8,5 @@ export class Binary      extends Resource
    static def : string = 'Binary';
    contentType : string ;
    securityContext : Reference ;
-   content : string ;
+   data : string ;
 }

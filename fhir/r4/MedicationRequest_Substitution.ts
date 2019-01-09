@@ -6,6 +6,7 @@ export class MedicationRequest_Substitution      extends BackboneElement
 {
 
    static def : string = 'MedicationRequest_Substitution';
-   allowed : string ;
+   allowedBoolean : string ;
+   allowedCodeableConcept : CodeableConcept ;
    reason : CodeableConcept ;
 }

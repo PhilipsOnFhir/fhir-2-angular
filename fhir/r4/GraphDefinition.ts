@@ -3,7 +3,6 @@ import { ContactDetail } from './ContactDetail'
 import { DomainResource } from './DomainResource'
 import { GraphDefinition_Link } from './GraphDefinition_Link'
 import { PublicationStatusEnum } from './PublicationStatusEnum'
-import { ResourceTypeEnum } from './ResourceTypeEnum'
 import { UsageContext } from './UsageContext'
 
 export class GraphDefinition      extends DomainResource
@@ -22,7 +21,7 @@ export class GraphDefinition      extends DomainResource
    useContext : UsageContext [];
    jurisdiction : CodeableConcept [];
    purpose : string ;
-   start : ResourceTypeEnum ;
+   start : string ;
    profile : string ;
    link : GraphDefinition_Link [];
 }

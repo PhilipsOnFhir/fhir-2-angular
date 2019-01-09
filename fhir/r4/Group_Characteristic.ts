@@ -4,6 +4,7 @@ import { DomainResource } from './DomainResource'
 import { Period } from './Period'
 import { Quantity } from './Quantity'
 import { Range } from './Range'
+import { Reference } from './Reference'
 
 export class Group_Characteristic      extends BackboneElement
 {
@@ -14,6 +15,7 @@ export class Group_Characteristic      extends BackboneElement
    valueBoolean : string ;
    valueQuantity : Quantity ;
    valueRange : Range ;
+   valueReference : Reference ;
    exclude : string ;
    period : Period ;
 }

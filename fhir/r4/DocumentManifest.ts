@@ -1,5 +1,4 @@
 import { CodeableConcept } from './CodeableConcept'
-import { DocumentManifest_Agent } from './DocumentManifest_Agent'
 import { DocumentManifest_Related } from './DocumentManifest_Related'
 import { DocumentReferenceStatusEnum } from './DocumentReferenceStatusEnum'
 import { DomainResource } from './DomainResource'
@@ -16,7 +15,7 @@ export class DocumentManifest      extends DomainResource
    type : CodeableConcept ;
    subject : Reference ;
    created : string ;
-   agent : DocumentManifest_Agent [];
+   author : Reference [];
    recipient : Reference [];
    source : string ;
    description : string ;

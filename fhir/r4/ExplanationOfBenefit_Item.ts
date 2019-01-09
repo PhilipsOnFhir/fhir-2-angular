@@ -20,7 +20,7 @@ export class ExplanationOfBenefit_Item      extends BackboneElement
    informationSequence : string [];
    revenue : CodeableConcept ;
    category : CodeableConcept ;
-   service : CodeableConcept ;
+   productOrService : CodeableConcept ;
    modifier : CodeableConcept [];
    programCode : CodeableConcept [];
    servicedDate : string ;

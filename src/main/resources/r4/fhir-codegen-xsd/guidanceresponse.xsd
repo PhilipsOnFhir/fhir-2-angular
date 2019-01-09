@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Jun 22, 2018 15:13+0000 for FHIR v3.4.0 
+  Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0 
 
   Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -49,9 +49,9 @@
     <xs:complexContent>
       <xs:extension base="DomainResource">
         <xs:sequence>
-          <xs:element name="requestId" minOccurs="0" maxOccurs="1" type="id">
+          <xs:element name="requestIdentifier" minOccurs="0" maxOccurs="1" type="Identifier">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The id of the request associated with this response. If an id was given as part of the request, it will be reproduced here to enable the requester to more easily identify the response in a multi-request scenario.</xs:documentation>
+              <xs:documentation xml:lang="en">The identifier of the request associated with this response. If an identifier was given as part of the request, it will be reproduced here to enable the requester to more easily identify the response in a multi-request scenario.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -84,9 +84,9 @@
               <xs:documentation xml:lang="en">The patient for which the request was processed.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="context" minOccurs="0" maxOccurs="1" type="Reference">
+          <xs:element name="encounter" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Allows the context of the guidance response to be provided if available. In a service context, this would likely be unavailable.</xs:documentation>
+              <xs:documentation xml:lang="en">The encounter during which this response was created or to which the creation of this record is tightly associated.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="occurrenceDateTime" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -174,7 +174,7 @@
   </xs:simpleType>
   <xs:complexType name="GuidanceResponseStatus">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The status of a guidance response</xs:documentation>
+      <xs:documentation xml:lang="en">The status of a guidance response.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>

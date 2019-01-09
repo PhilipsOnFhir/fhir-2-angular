@@ -1,6 +1,6 @@
 import { CodeableConcept } from './CodeableConcept'
 import { Coverage_Class } from './Coverage_Class'
-import { Coverage_Copay } from './Coverage_Copay'
+import { Coverage_CostToBeneficiary } from './Coverage_CostToBeneficiary'
 import { DomainResource } from './DomainResource'
 import { FinancialResourceStatusCodesEnum } from './FinancialResourceStatusCodesEnum'
 import { Identifier } from './Identifier'
@@ -25,6 +25,7 @@ export class Coverage      extends DomainResource
    class : Coverage_Class [];
    order : string ;
    network : string ;
-   copay : Coverage_Copay [];
+   costToBeneficiary : Coverage_CostToBeneficiary [];
+   subrogation : string ;
    contract : Reference [];
 }

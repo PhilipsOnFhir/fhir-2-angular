@@ -1,11 +1,12 @@
 import { BackboneElement } from './BackboneElement'
 import { DomainResource } from './DomainResource'
-import { ExampleScenario_Option } from './ExampleScenario_Option'
+import { ExampleScenario_Step } from './ExampleScenario_Step'
 
 export class ExampleScenario_Alternative      extends BackboneElement
 {
 
    static def : string = 'ExampleScenario_Alternative';
-   name : string ;
-   option : ExampleScenario_Option [];
+   title : string ;
+   description : string ;
+   step : ExampleScenario_Step [];
 }

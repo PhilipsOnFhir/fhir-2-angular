@@ -1,4 +1,3 @@
-import { CodeableConcept } from './CodeableConcept'
 import { CompartmentDefinition_Resource } from './CompartmentDefinition_Resource'
 import { CompartmentTypeEnum } from './CompartmentTypeEnum'
 import { ContactDetail } from './ContactDetail'
@@ -11,8 +10,8 @@ export class CompartmentDefinition      extends DomainResource
 
    static def : string = 'CompartmentDefinition';
    url : string ;
+   version : string ;
    name : string ;
-   title : string ;
    status : PublicationStatusEnum ;
    experimental : string ;
    date : string ;
@@ -20,7 +19,6 @@ export class CompartmentDefinition      extends DomainResource
    contact : ContactDetail [];
    description : string ;
    useContext : UsageContext [];
-   jurisdiction : CodeableConcept [];
    purpose : string ;
    code : CompartmentTypeEnum ;
    search : string ;

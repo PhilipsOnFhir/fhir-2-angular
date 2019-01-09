@@ -8,8 +8,6 @@ import { TestScript_Destination } from './TestScript_Destination'
 import { TestScript_Fixture } from './TestScript_Fixture'
 import { TestScript_Metadata } from './TestScript_Metadata'
 import { TestScript_Origin } from './TestScript_Origin'
-import { TestScript_Rule } from './TestScript_Rule'
-import { TestScript_Ruleset } from './TestScript_Ruleset'
 import { TestScript_Setup } from './TestScript_Setup'
 import { TestScript_Teardown } from './TestScript_Teardown'
 import { TestScript_Test } from './TestScript_Test'
@@ -41,8 +39,6 @@ export class TestScript      extends DomainResource
    fixture : TestScript_Fixture [];
    profile : Reference [];
    variable : TestScript_Variable [];
-   rule : TestScript_Rule [];
-   ruleset : TestScript_Ruleset [];
    setup : TestScript_Setup ;
    test : TestScript_Test [];
    teardown : TestScript_Teardown ;

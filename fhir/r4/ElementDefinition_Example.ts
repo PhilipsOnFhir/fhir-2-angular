@@ -1,6 +1,7 @@
 import { Address } from './Address'
 import { Annotation } from './Annotation'
 import { Attachment } from './Attachment'
+import { BackboneElement } from './BackboneElement'
 import { CodeableConcept } from './CodeableConcept'
 import { Coding } from './Coding'
 import { ContactDetail } from './ContactDetail'
@@ -9,7 +10,7 @@ import { Contributor } from './Contributor'
 import { DataRequirement } from './DataRequirement'
 import { DomainResource } from './DomainResource'
 import { Dosage } from './Dosage'
-import { Element } from './Element'
+import { Expression } from './Expression'
 import { HumanName } from './HumanName'
 import { Identifier } from './Identifier'
 import { Money } from './Money'
@@ -26,7 +27,7 @@ import { Timing } from './Timing'
 import { TriggerDefinition } from './TriggerDefinition'
 import { UsageContext } from './UsageContext'
 
-export class ElementDefinition_Example      extends Element
+export class ElementDefinition_Example      extends BackboneElement
 {
 
    static def : string = 'ElementDefinition_Example';
@@ -71,11 +72,12 @@ export class ElementDefinition_Example      extends Element
    valueSampledData : SampledData ;
    valueSignature : Signature ;
    valueTiming : Timing ;
-   valueParameterDefinition : ParameterDefinition ;
-   valueDataRequirement : DataRequirement ;
-   valueRelatedArtifact : RelatedArtifact ;
    valueContactDetail : ContactDetail ;
    valueContributor : Contributor ;
+   valueDataRequirement : DataRequirement ;
+   valueExpression : Expression ;
+   valueParameterDefinition : ParameterDefinition ;
+   valueRelatedArtifact : RelatedArtifact ;
    valueTriggerDefinition : TriggerDefinition ;
    valueUsageContext : UsageContext ;
    valueDosage : Dosage ;

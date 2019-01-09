@@ -15,7 +15,7 @@ export class Account      extends DomainResource
    status : AccountStatusEnum ;
    type : CodeableConcept ;
    name : string ;
-   subject : Reference ;
+   subject : Reference [];
    servicePeriod : Period ;
    coverage : Account_Coverage [];
    owner : Reference ;

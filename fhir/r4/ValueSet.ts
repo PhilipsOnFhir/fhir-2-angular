@@ -27,7 +27,6 @@ export class ValueSet      extends DomainResource
    immutable : string ;
    purpose : string ;
    copyright : string ;
-   extensible : string ;
    compose : ValueSet_Compose ;
    expansion : ValueSet_Expansion ;
 }

@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Jun 22, 2018 15:13+0000 for FHIR v3.4.0 
+  Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0 
 
   Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -51,7 +51,7 @@
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this plan definition is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this plan definition when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this plan definition is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the plan definition is stored on different servers.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -126,7 +126,7 @@
           </xs:element>
           <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate plan definition instances.</xs:documentation>
+              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate plan definition instances.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -169,9 +169,24 @@
               <xs:documentation xml:lang="en">Descriptive topics related to the content of the plan definition. Topics provide a high-level categorization of the definition that can be useful for filtering and searching.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="contributor" minOccurs="0" maxOccurs="unbounded" type="Contributor">
+          <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A contributor to the content of the plan definition, including authors, editors, reviewers, and endorsers.</xs:documentation>
+              <xs:documentation xml:lang="en">An individiual or organization primarily involved in the creation and maintenance of the content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="editor" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An individual or organization primarily responsible for internal coherence of the content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="reviewer" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An individual or organization primarily responsible for review of some aspect of the content.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="endorser" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">An individual or organization responsible for officially endorsing the content for use in some setting.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="relatedArtifact" minOccurs="0" maxOccurs="unbounded" type="RelatedArtifact">
@@ -307,6 +322,11 @@
               <xs:documentation xml:lang="en">A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.</xs:documentation>
            </xs:annotation>
           </xs:element>
+          <xs:element name="priority" minOccurs="0" maxOccurs="1" type="RequestPriority">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Indicates how quickly the action should be addressed with respect to other actions.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
             <xs:annotation>
               <xs:documentation xml:lang="en">A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.</xs:documentation>
@@ -327,6 +347,16 @@
               <xs:documentation xml:lang="en">Identifies goals that this action supports. The reference must be to a goal element defined within this plan definition.</xs:documentation>
            </xs:annotation>
           </xs:element>
+                      <xs:element name="subjectCodeableConcept" type="CodeableConcept" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">A code or group definition that describes the intended subject of the action and its children, if any. (choose any one of subject*, but only one)</xs:documentation>
+              </xs:annotation>
+             </xs:element>
+            <xs:element name="subjectReference" type="Reference" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">A code or group definition that describes the intended subject of the action and its children, if any. (choose any one of subject*, but only one)</xs:documentation>
+              </xs:annotation>
+             </xs:element>
           <xs:element name="trigger" minOccurs="0" maxOccurs="unbounded" type="TriggerDefinition">
             <xs:annotation>
               <xs:documentation xml:lang="en">A description of when the action should be triggered.</xs:documentation>
@@ -417,11 +447,16 @@
               <xs:documentation xml:lang="en">Defines whether the action can be selected multiple times.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="definition" minOccurs="0" maxOccurs="1" type="canonical">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to an ActivityDefinition that describes the action to be taken in detail, or a PlanDefinition that describes a series of actions to be taken.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
+                      <xs:element name="definitionCanonical" type="canonical" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">A reference to an ActivityDefinition that describes the action to be taken in detail, or a PlanDefinition that describes a series of actions to be taken. (choose any one of definition*, but only one)</xs:documentation>
+              </xs:annotation>
+             </xs:element>
+            <xs:element name="definitionUri" type="uri" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">A reference to an ActivityDefinition that describes the action to be taken in detail, or a PlanDefinition that describes a series of actions to be taken. (choose any one of definition*, but only one)</xs:documentation>
+              </xs:annotation>
+             </xs:element>
           <xs:element name="transform" minOccurs="0" maxOccurs="1" type="canonical">
             <xs:annotation>
               <xs:documentation xml:lang="en">A reference to a StructureMap resource that defines a transform that can be executed to produce the intent resource using the ActivityDefinition instance as the input.</xs:documentation>
@@ -453,17 +488,7 @@
               <xs:documentation xml:lang="en">The kind of condition.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A brief, natural language description of the condition that effectively communicates the intended semantics.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="language" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The media type of the language for the expression.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="expression" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="expression" minOccurs="0" maxOccurs="1" type="Expression">
             <xs:annotation>
               <xs:documentation xml:lang="en">An expression that returns true or false, indicating whether the condition is satisfied.</xs:documentation>
            </xs:annotation>
@@ -531,22 +556,12 @@
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">A brief, natural language description of the intended semantics of the dynamic value.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
           <xs:element name="path" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The path to the element to be customized. This is the path on the resource that will hold the result of the calculation defined by the expression.</xs:documentation>
+              <xs:documentation xml:lang="en">The path to the element to be customized. This is the path on the resource that will hold the result of the calculation defined by the expression. The specified path SHALL be a FHIRPath resolveable on the specified target type of the ActivityDefinition, and SHALL consist only of identifiers, constant indexers, and a restricted subset of functions. The path is allowed to contain qualifiers (.) to traverse sub-elements, as well as indexers ([x]) to traverse multiple-cardinality sub-elements (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="language" minOccurs="0" maxOccurs="1" type="string">
-            <xs:annotation>
-              <xs:documentation xml:lang="en">The media type of the language for the expression.</xs:documentation>
-           </xs:annotation>
-          </xs:element>
-          <xs:element name="expression" minOccurs="0" maxOccurs="1" type="string">
+          <xs:element name="expression" minOccurs="0" maxOccurs="1" type="Expression">
             <xs:annotation>
               <xs:documentation xml:lang="en">An expression specifying the value of the customized element.</xs:documentation>
            </xs:annotation>
@@ -576,7 +591,7 @@
   </xs:simpleType>
   <xs:complexType name="ActionRequiredBehavior">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Defines requiredness behavior for selecting an action or an action group</xs:documentation>
+      <xs:documentation xml:lang="en">Defines expectations around whether an action or action group is required.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -636,7 +651,7 @@
   </xs:simpleType>
   <xs:complexType name="ActionRelationshipType">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Defines the types of relationships between actions</xs:documentation>
+      <xs:documentation xml:lang="en">Defines the types of relationships between actions.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -666,7 +681,7 @@
   </xs:simpleType>
   <xs:complexType name="ActionGroupingBehavior">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Defines organization behavior of a group</xs:documentation>
+      <xs:documentation xml:lang="en">Defines organization behavior of a group.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -711,7 +726,7 @@
   </xs:simpleType>
   <xs:complexType name="ActionSelectionBehavior">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Defines selection behavior of a group</xs:documentation>
+      <xs:documentation xml:lang="en">Defines selection behavior of a group.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -736,7 +751,7 @@
   </xs:simpleType>
   <xs:complexType name="ActionCardinalityBehavior">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Defines behavior for an action or a group for how many times that item may be repeated</xs:documentation>
+      <xs:documentation xml:lang="en">Defines behavior for an action or a group for how many times that item may be repeated.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -761,7 +776,7 @@
   </xs:simpleType>
   <xs:complexType name="ActionPrecheckBehavior">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Defines selection frequency behavior for an action or group</xs:documentation>
+      <xs:documentation xml:lang="en">Defines selection frequency behavior for an action or group.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -791,7 +806,7 @@
   </xs:simpleType>
   <xs:complexType name="ActionConditionKind">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Defines the kinds of conditions that can appear on actions</xs:documentation>
+      <xs:documentation xml:lang="en">Defines the kinds of conditions that can appear on actions.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>

@@ -12,7 +12,10 @@ export class Specimen_Collection      extends BackboneElement
    collector : Reference ;
    collectedDateTime : string ;
    collectedPeriod : Period ;
+   duration : string ;
    quantity : Quantity ;
    method : CodeableConcept ;
    bodySite : CodeableConcept ;
+   fastingStatusCodeableConcept : CodeableConcept ;
+   fastingStatusDuration : string ;
 }

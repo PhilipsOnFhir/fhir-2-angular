@@ -1,6 +1,7 @@
 import { Address } from './Address'
 import { Annotation } from './Annotation'
 import { Attachment } from './Attachment'
+import { BackboneElement } from './BackboneElement'
 import { CodeableConcept } from './CodeableConcept'
 import { Coding } from './Coding'
 import { ContactDetail } from './ContactDetail'
@@ -9,7 +10,6 @@ import { Contributor } from './Contributor'
 import { DataRequirement } from './DataRequirement'
 import { DomainResource } from './DomainResource'
 import { Dosage } from './Dosage'
-import { Element } from './Element'
 import { ElementDefinition_Base } from './ElementDefinition_Base'
 import { ElementDefinition_Binding } from './ElementDefinition_Binding'
 import { ElementDefinition_Constraint } from './ElementDefinition_Constraint'
@@ -17,6 +17,7 @@ import { ElementDefinition_Example } from './ElementDefinition_Example'
 import { ElementDefinition_Mapping } from './ElementDefinition_Mapping'
 import { ElementDefinition_Slicing } from './ElementDefinition_Slicing'
 import { ElementDefinition_Type } from './ElementDefinition_Type'
+import { Expression } from './Expression'
 import { HumanName } from './HumanName'
 import { Identifier } from './Identifier'
 import { Money } from './Money'
@@ -34,13 +35,14 @@ import { Timing } from './Timing'
 import { TriggerDefinition } from './TriggerDefinition'
 import { UsageContext } from './UsageContext'
 
-export class ElementDefinition      extends Element
+export class ElementDefinition      extends BackboneElement
 {
 
    static def : string = 'ElementDefinition';
    path : string ;
    representation : PropertyRepresentationEnum [];
    sliceName : string ;
+   sliceIsConstraining : string ;
    label : string ;
    code : Coding [];
    slicing : ElementDefinition_Slicing ;
@@ -94,11 +96,12 @@ export class ElementDefinition      extends Element
    defaultValueSampledData : SampledData ;
    defaultValueSignature : Signature ;
    defaultValueTiming : Timing ;
-   defaultValueParameterDefinition : ParameterDefinition ;
-   defaultValueDataRequirement : DataRequirement ;
-   defaultValueRelatedArtifact : RelatedArtifact ;
    defaultValueContactDetail : ContactDetail ;
    defaultValueContributor : Contributor ;
+   defaultValueDataRequirement : DataRequirement ;
+   defaultValueExpression : Expression ;
+   defaultValueParameterDefinition : ParameterDefinition ;
+   defaultValueRelatedArtifact : RelatedArtifact ;
    defaultValueTriggerDefinition : TriggerDefinition ;
    defaultValueUsageContext : UsageContext ;
    defaultValueDosage : Dosage ;
@@ -144,11 +147,12 @@ export class ElementDefinition      extends Element
    fixedSampledData : SampledData ;
    fixedSignature : Signature ;
    fixedTiming : Timing ;
-   fixedParameterDefinition : ParameterDefinition ;
-   fixedDataRequirement : DataRequirement ;
-   fixedRelatedArtifact : RelatedArtifact ;
    fixedContactDetail : ContactDetail ;
    fixedContributor : Contributor ;
+   fixedDataRequirement : DataRequirement ;
+   fixedExpression : Expression ;
+   fixedParameterDefinition : ParameterDefinition ;
+   fixedRelatedArtifact : RelatedArtifact ;
    fixedTriggerDefinition : TriggerDefinition ;
    fixedUsageContext : UsageContext ;
    fixedDosage : Dosage ;
@@ -192,11 +196,12 @@ export class ElementDefinition      extends Element
    patternSampledData : SampledData ;
    patternSignature : Signature ;
    patternTiming : Timing ;
-   patternParameterDefinition : ParameterDefinition ;
-   patternDataRequirement : DataRequirement ;
-   patternRelatedArtifact : RelatedArtifact ;
    patternContactDetail : ContactDetail ;
    patternContributor : Contributor ;
+   patternDataRequirement : DataRequirement ;
+   patternExpression : Expression ;
+   patternParameterDefinition : ParameterDefinition ;
+   patternRelatedArtifact : RelatedArtifact ;
    patternTriggerDefinition : TriggerDefinition ;
    patternUsageContext : UsageContext ;
    patternDosage : Dosage ;

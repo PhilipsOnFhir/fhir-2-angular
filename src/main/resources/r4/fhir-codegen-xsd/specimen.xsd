@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Jun 22, 2018 15:13+0000 for FHIR v3.4.0 
+  Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0 
 
   Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -69,9 +69,9 @@
               <xs:documentation xml:lang="en">The kind of material that forms the specimen.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="subject" minOccurs="1" maxOccurs="1" type="Reference">
+          <xs:element name="subject" minOccurs="0" maxOccurs="1" type="Reference">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Where the specimen came from. This may be from patient(s),from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device.</xs:documentation>
+              <xs:documentation xml:lang="en">Where the specimen came from. This may be from patient(s), from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="receivedTime" minOccurs="0" maxOccurs="1" type="dateTime">
@@ -102,6 +102,11 @@
           <xs:element name="container" type="Specimen.Container" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="condition" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A mode or state of being that describes the nature of the specimen.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="note" minOccurs="0" maxOccurs="unbounded" type="Annotation">
@@ -135,6 +140,11 @@
                 <xs:documentation xml:lang="en">Time when specimen was collected from subject - the physiologically relevant time. (choose any one of collected*, but only one)</xs:documentation>
               </xs:annotation>
              </xs:element>
+          <xs:element name="duration" minOccurs="0" maxOccurs="1" type="Duration">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The span of time over which the collection of a specimen occurred.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="quantity" minOccurs="0" maxOccurs="1" type="Quantity">
             <xs:annotation>
               <xs:documentation xml:lang="en">The quantity of specimen collected; for instance the volume of a blood sample, or the physical measurement of an anatomic pathology sample.</xs:documentation>
@@ -150,6 +160,16 @@
               <xs:documentation xml:lang="en">Anatomical location from which the specimen was collected (if subject is a patient). This is the target site.  This element is not used for environmental specimens.</xs:documentation>
            </xs:annotation>
           </xs:element>
+                      <xs:element name="fastingStatusCodeableConcept" type="CodeableConcept" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Abstinence or reduction from some or all food, drink, or both, for a period of time prior to sample collection. (choose any one of fastingStatus*, but only one)</xs:documentation>
+              </xs:annotation>
+             </xs:element>
+            <xs:element name="fastingStatusDuration" type="Duration" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Abstinence or reduction from some or all food, drink, or both, for a period of time prior to sample collection. (choose any one of fastingStatus*, but only one)</xs:documentation>
+              </xs:annotation>
+             </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

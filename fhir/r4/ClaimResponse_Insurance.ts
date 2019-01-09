@@ -10,6 +10,5 @@ export class ClaimResponse_Insurance      extends BackboneElement
    focal : string ;
    coverage : Reference ;
    businessArrangement : string ;
-   preAuthRef : string [];
    claimResponse : Reference ;
 }

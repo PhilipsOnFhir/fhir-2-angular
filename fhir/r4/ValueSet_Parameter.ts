@@ -12,4 +12,5 @@ export class ValueSet_Parameter      extends BackboneElement
    valueDecimal : string ;
    valueUri : string ;
    valueCode : string ;
+   valueDateTime : string ;
 }

@@ -2,6 +2,7 @@ import { BackboneElement } from './BackboneElement'
 import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
 import { Identifier } from './Identifier'
+import { Quantity } from './Quantity'
 
 export class SubstanceSpecification_Moiety      extends BackboneElement
 {
@@ -13,5 +14,6 @@ export class SubstanceSpecification_Moiety      extends BackboneElement
    stereochemistry : CodeableConcept ;
    opticalActivity : CodeableConcept ;
    molecularFormula : string ;
-   amount : string ;
+   amountQuantity : Quantity ;
+   amountString : string ;
 }

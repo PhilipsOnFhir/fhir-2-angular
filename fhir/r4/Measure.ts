@@ -1,6 +1,5 @@
 import { CodeableConcept } from './CodeableConcept'
 import { ContactDetail } from './ContactDetail'
-import { Contributor } from './Contributor'
 import { DomainResource } from './DomainResource'
 import { Identifier } from './Identifier'
 import { Measure_Group } from './Measure_Group'
@@ -38,7 +37,10 @@ export class Measure      extends DomainResource
    lastReviewDate : string ;
    effectivePeriod : Period ;
    topic : CodeableConcept [];
-   contributor : Contributor [];
+   author : ContactDetail [];
+   editor : ContactDetail [];
+   reviewer : ContactDetail [];
+   endorser : ContactDetail [];
    relatedArtifact : RelatedArtifact [];
    library : string [];
    disclaimer : string ;
@@ -49,10 +51,9 @@ export class Measure      extends DomainResource
    rateAggregation : string ;
    rationale : string ;
    clinicalRecommendationStatement : string ;
-   improvementNotation : string ;
+   improvementNotation : CodeableConcept ;
    definition : string [];
    guidance : string ;
-   set : string ;
    group : Measure_Group [];
    supplementalData : Measure_SupplementalData [];
 }

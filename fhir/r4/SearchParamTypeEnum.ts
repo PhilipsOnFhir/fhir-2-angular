@@ -6,6 +6,7 @@ export enum SearchParamTypeEnum{
     NUMBER = 'number',
     QUANTITY = 'quantity',
     REFERENCE = 'reference',
+    SPECIAL = 'special',
     STRING = 'string',
     TOKEN = 'token',
     URI = 'uri',

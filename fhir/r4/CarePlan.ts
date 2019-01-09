@@ -24,9 +24,11 @@ export class CarePlan      extends DomainResource
    title : string ;
    description : string ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    period : Period ;
-   author : Reference [];
+   created : string ;
+   author : Reference ;
+   contributor : Reference [];
    careTeam : Reference [];
    addresses : Reference [];
    supportingInfo : Reference [];

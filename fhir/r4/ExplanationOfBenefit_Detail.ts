@@ -14,7 +14,7 @@ export class ExplanationOfBenefit_Detail      extends BackboneElement
    sequence : string ;
    revenue : CodeableConcept ;
    category : CodeableConcept ;
-   service : CodeableConcept ;
+   productOrService : CodeableConcept ;
    modifier : CodeableConcept [];
    programCode : CodeableConcept [];
    quantity : Quantity ;

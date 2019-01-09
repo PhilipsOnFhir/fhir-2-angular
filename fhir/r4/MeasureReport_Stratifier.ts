@@ -7,6 +7,6 @@ export class MeasureReport_Stratifier      extends BackboneElement
 {
 
    static def : string = 'MeasureReport_Stratifier';
-   code : CodeableConcept ;
+   code : CodeableConcept [];
    stratum : MeasureReport_Stratum [];
 }

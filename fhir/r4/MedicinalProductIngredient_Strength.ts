@@ -9,7 +9,9 @@ export class MedicinalProductIngredient_Strength      extends BackboneElement
 
    static def : string = 'MedicinalProductIngredient_Strength';
    presentation : Ratio ;
+   presentationLowLimit : Ratio ;
    concentration : Ratio ;
+   concentrationLowLimit : Ratio ;
    measurementPoint : string ;
    country : CodeableConcept [];
    referenceStrength : MedicinalProductIngredient_ReferenceStrength [];

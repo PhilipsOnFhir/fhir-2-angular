@@ -8,6 +8,6 @@ export class Encounter_Diagnosis      extends BackboneElement
 
    static def : string = 'Encounter_Diagnosis';
    condition : Reference ;
-   role : CodeableConcept ;
+   use : CodeableConcept ;
    rank : string ;
 }

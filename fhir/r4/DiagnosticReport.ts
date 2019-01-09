@@ -14,10 +14,10 @@ export class DiagnosticReport      extends DomainResource
    identifier : Identifier [];
    basedOn : Reference [];
    status : DiagnosticReportStatusEnum ;
-   category : CodeableConcept ;
+   category : CodeableConcept [];
    code : CodeableConcept ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    effectiveDateTime : string ;
    effectivePeriod : Period ;
    issued : string ;
@@ -28,6 +28,6 @@ export class DiagnosticReport      extends DomainResource
    imagingStudy : Reference [];
    media : DiagnosticReport_Media [];
    conclusion : string ;
-   codedDiagnosis : CodeableConcept [];
+   conclusionCode : CodeableConcept [];
    presentedForm : Attachment [];
 }

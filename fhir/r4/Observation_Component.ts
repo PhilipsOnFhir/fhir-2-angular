@@ -25,6 +25,6 @@ export class Observation_Component      extends BackboneElement
    valueDateTime : string ;
    valuePeriod : Period ;
    dataAbsentReason : CodeableConcept ;
-   interpretation : CodeableConcept ;
+   interpretation : CodeableConcept [];
    referenceRange : Observation_ReferenceRange [];
 }

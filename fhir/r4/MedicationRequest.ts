@@ -3,8 +3,6 @@ import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
 import { Dosage } from './Dosage'
 import { Identifier } from './Identifier'
-import { MedicationRequestIntentEnum } from './MedicationRequestIntentEnum'
-import { MedicationRequestStatusEnum } from './MedicationRequestStatusEnum'
 import { MedicationRequest_DispenseRequest } from './MedicationRequest_DispenseRequest'
 import { MedicationRequest_Substitution } from './MedicationRequest_Substitution'
 import { Reference } from './Reference'
@@ -15,15 +13,18 @@ export class MedicationRequest      extends DomainResource
 
    static def : string = 'MedicationRequest';
    identifier : Identifier [];
-   status : MedicationRequestStatusEnum ;
-   intent : MedicationRequestIntentEnum ;
+   status : string ;
+   statusReason : CodeableConcept ;
+   intent : string ;
    category : CodeableConcept [];
    priority : RequestPriorityEnum ;
    doNotPerform : string ;
+   reportedBoolean : string ;
+   reportedReference : Reference ;
    medicationCodeableConcept : CodeableConcept ;
    medicationReference : Reference ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    supportingInformation : Reference [];
    authoredOn : string ;
    requester : Reference ;
@@ -32,10 +33,11 @@ export class MedicationRequest      extends DomainResource
    recorder : Reference ;
    reasonCode : CodeableConcept [];
    reasonReference : Reference [];
-   instantiates : string [];
+   instantiatesCanonical : string [];
+   instantiatesUri : string [];
    basedOn : Reference [];
    groupIdentifier : Identifier ;
-   statusReason : CodeableConcept ;
+   courseOfTherapyType : CodeableConcept ;
    insurance : Reference [];
    note : Annotation [];
    dosageInstruction : Dosage [];

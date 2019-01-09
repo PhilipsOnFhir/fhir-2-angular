@@ -12,6 +12,7 @@ import { Reference } from './Reference'
 import { RelatedArtifact } from './RelatedArtifact'
 import { RequestGroup_Condition } from './RequestGroup_Condition'
 import { RequestGroup_RelatedAction } from './RequestGroup_RelatedAction'
+import { RequestPriorityEnum } from './RequestPriorityEnum'
 import { Timing } from './Timing'
 
 export class RequestGroup_Action      extends BackboneElement
@@ -22,6 +23,7 @@ export class RequestGroup_Action      extends BackboneElement
    title : string ;
    description : string ;
    textEquivalent : string ;
+   priority : RequestPriorityEnum ;
    code : CodeableConcept [];
    documentation : RelatedArtifact [];
    condition : RequestGroup_Condition [];

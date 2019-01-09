@@ -2,7 +2,6 @@ import { CodeableConcept } from './CodeableConcept'
 import { ContactDetail } from './ContactDetail'
 import { DomainResource } from './DomainResource'
 import { PublicationStatusEnum } from './PublicationStatusEnum'
-import { ResourceTypeEnum } from './ResourceTypeEnum'
 import { SearchComparatorEnum } from './SearchComparatorEnum'
 import { SearchModifierCodeEnum } from './SearchModifierCodeEnum'
 import { SearchParamTypeEnum } from './SearchParamTypeEnum'
@@ -28,12 +27,12 @@ export class SearchParameter      extends DomainResource
    jurisdiction : CodeableConcept [];
    purpose : string ;
    code : string ;
-   base : ResourceTypeEnum [];
+   base : string [];
    type : SearchParamTypeEnum ;
    expression : string ;
    xpath : string ;
    xpathUsage : XPathUsageTypeEnum ;
-   target : ResourceTypeEnum [];
+   target : string [];
    multipleOr : string ;
    multipleAnd : string ;
    comparator : SearchComparatorEnum [];

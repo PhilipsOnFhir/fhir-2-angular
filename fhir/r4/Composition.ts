@@ -4,7 +4,6 @@ import { Composition_Attester } from './Composition_Attester'
 import { Composition_Event } from './Composition_Event'
 import { Composition_RelatesTo } from './Composition_RelatesTo'
 import { Composition_Section } from './Composition_Section'
-import { ConfidentialityClassificationEnum } from './ConfidentialityClassificationEnum'
 import { DomainResource } from './DomainResource'
 import { Identifier } from './Identifier'
 import { Reference } from './Reference'
@@ -16,13 +15,13 @@ export class Composition      extends DomainResource
    identifier : Identifier ;
    status : CompositionStatusEnum ;
    type : CodeableConcept ;
-   class : CodeableConcept ;
+   category : CodeableConcept [];
    subject : Reference ;
    encounter : Reference ;
    date : string ;
    author : Reference [];
    title : string ;
-   confidentiality : ConfidentialityClassificationEnum ;
+   confidentiality : string ;
    attester : Composition_Attester [];
    custodian : Reference ;
    relatesTo : Composition_RelatesTo [];

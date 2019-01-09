@@ -1,11 +1,11 @@
+import { BackboneElement } from './BackboneElement'
 import { DomainResource } from './DomainResource'
-import { Element } from './Element'
 import { EventTimingEnum } from './EventTimingEnum'
 import { Period } from './Period'
 import { Range } from './Range'
 import { UnitsOfTimeEnum } from './UnitsOfTimeEnum'
 
-export class Timing_Repeat      extends Element
+export class Timing_Repeat      extends BackboneElement
 {
 
    static def : string = 'Timing_Repeat';

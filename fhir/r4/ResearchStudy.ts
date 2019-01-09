@@ -23,7 +23,7 @@ export class ResearchStudy      extends DomainResource
    phase : CodeableConcept ;
    category : CodeableConcept [];
    focus : CodeableConcept [];
-   condition : Reference [];
+   condition : CodeableConcept [];
    contact : ContactDetail [];
    relatedArtifact : RelatedArtifact [];
    keyword : CodeableConcept [];

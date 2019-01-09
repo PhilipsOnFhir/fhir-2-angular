@@ -3,6 +3,7 @@ import { CodeableConcept } from './CodeableConcept'
 import { ContactPoint } from './ContactPoint'
 import { DomainResource } from './DomainResource'
 import { HealthcareService_AvailableTime } from './HealthcareService_AvailableTime'
+import { HealthcareService_Eligibility } from './HealthcareService_Eligibility'
 import { HealthcareService_NotAvailable } from './HealthcareService_NotAvailable'
 import { Identifier } from './Identifier'
 import { Reference } from './Reference'
@@ -25,10 +26,10 @@ export class HealthcareService      extends DomainResource
    telecom : ContactPoint [];
    coverageArea : Reference [];
    serviceProvisionCode : CodeableConcept [];
-   eligibility : CodeableConcept ;
-   eligibilityNote : string ;
-   programName : string [];
+   eligibility : HealthcareService_Eligibility [];
+   program : CodeableConcept [];
    characteristic : CodeableConcept [];
+   communication : CodeableConcept [];
    referralMethod : CodeableConcept [];
    appointmentRequired : string ;
    availableTime : HealthcareService_AvailableTime [];

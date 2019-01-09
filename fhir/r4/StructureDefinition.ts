@@ -2,6 +2,7 @@ import { CodeableConcept } from './CodeableConcept'
 import { Coding } from './Coding'
 import { ContactDetail } from './ContactDetail'
 import { DomainResource } from './DomainResource'
+import { FHIRVersionEnum } from './FHIRVersionEnum'
 import { Identifier } from './Identifier'
 import { PublicationStatusEnum } from './PublicationStatusEnum'
 import { StructureDefinitionKindEnum } from './StructureDefinitionKindEnum'
@@ -32,7 +33,7 @@ export class StructureDefinition      extends DomainResource
    purpose : string ;
    copyright : string ;
    keyword : Coding [];
-   fhirVersion : string ;
+   fhirVersion : FHIRVersionEnum ;
    mapping : StructureDefinition_Mapping [];
    kind : StructureDefinitionKindEnum ;
    abstract : string ;

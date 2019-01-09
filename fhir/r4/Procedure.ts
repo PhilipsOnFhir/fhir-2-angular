@@ -23,7 +23,7 @@ export class Procedure      extends DomainResource
    category : CodeableConcept ;
    code : CodeableConcept ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    performedDateTime : string ;
    performedPeriod : Period ;
    performedString : string ;

@@ -28,10 +28,11 @@ export class Encounter      extends DomainResource
    episodeOfCare : Reference [];
    basedOn : Reference [];
    participant : Encounter_Participant [];
-   appointment : Reference ;
+   appointment : Reference [];
    period : Period ;
    length : string ;
-   reason : CodeableConcept [];
+   reasonCode : CodeableConcept [];
+   reasonReference : Reference [];
    diagnosis : Encounter_Diagnosis [];
    account : Reference [];
    hospitalization : Encounter_Hospitalization ;

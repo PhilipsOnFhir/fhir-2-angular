@@ -5,7 +5,6 @@ import { OperationDefinition_Overload } from './OperationDefinition_Overload'
 import { OperationDefinition_Parameter } from './OperationDefinition_Parameter'
 import { OperationKindEnum } from './OperationKindEnum'
 import { PublicationStatusEnum } from './PublicationStatusEnum'
-import { ResourceTypeEnum } from './ResourceTypeEnum'
 import { UsageContext } from './UsageContext'
 
 export class OperationDefinition      extends DomainResource
@@ -15,6 +14,7 @@ export class OperationDefinition      extends DomainResource
    url : string ;
    version : string ;
    name : string ;
+   title : string ;
    status : PublicationStatusEnum ;
    kind : OperationKindEnum ;
    experimental : string ;
@@ -29,7 +29,7 @@ export class OperationDefinition      extends DomainResource
    code : string ;
    comment : string ;
    base : string ;
-   resource : ResourceTypeEnum [];
+   resource : string [];
    system : string ;
    type : string ;
    instance : string ;

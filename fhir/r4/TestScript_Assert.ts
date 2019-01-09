@@ -3,10 +3,7 @@ import { AssertionOperatorTypeEnum } from './AssertionOperatorTypeEnum'
 import { AssertionResponseTypesEnum } from './AssertionResponseTypesEnum'
 import { BackboneElement } from './BackboneElement'
 import { DomainResource } from './DomainResource'
-import { FHIRDefinedTypeEnum } from './FHIRDefinedTypeEnum'
 import { TestScriptRequestMethodCodeEnum } from './TestScriptRequestMethodCodeEnum'
-import { TestScript_Rule2 } from './TestScript_Rule2'
-import { TestScript_Ruleset1 } from './TestScript_Ruleset1'
 
 export class TestScript_Assert      extends BackboneElement
 {
@@ -27,11 +24,9 @@ export class TestScript_Assert      extends BackboneElement
    path : string ;
    requestMethod : TestScriptRequestMethodCodeEnum ;
    requestURL : string ;
-   resource : FHIRDefinedTypeEnum ;
+   resource : string ;
    response : AssertionResponseTypesEnum ;
    responseCode : string ;
-   rule : TestScript_Rule2 ;
-   ruleset : TestScript_Ruleset1 ;
    sourceId : string ;
    validateProfileId : string ;
    value : string ;

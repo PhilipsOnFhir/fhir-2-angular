@@ -10,6 +10,7 @@ import { Contributor } from './Contributor'
 import { DataRequirement } from './DataRequirement'
 import { DomainResource } from './DomainResource'
 import { Dosage } from './Dosage'
+import { Expression } from './Expression'
 import { HumanName } from './HumanName'
 import { Identifier } from './Identifier'
 import { Money } from './Money'
@@ -71,11 +72,12 @@ export class Parameters_Parameter      extends BackboneElement
    valueSampledData : SampledData ;
    valueSignature : Signature ;
    valueTiming : Timing ;
-   valueParameterDefinition : ParameterDefinition ;
-   valueDataRequirement : DataRequirement ;
-   valueRelatedArtifact : RelatedArtifact ;
    valueContactDetail : ContactDetail ;
    valueContributor : Contributor ;
+   valueDataRequirement : DataRequirement ;
+   valueExpression : Expression ;
+   valueParameterDefinition : ParameterDefinition ;
+   valueRelatedArtifact : RelatedArtifact ;
    valueTriggerDefinition : TriggerDefinition ;
    valueUsageContext : UsageContext ;
    valueDosage : Dosage ;

@@ -1,7 +1,7 @@
 import { BackboneElement } from './BackboneElement'
 import { Coding } from './Coding'
 import { DomainResource } from './DomainResource'
-import { FHIRDefinedTypeEnum } from './FHIRDefinedTypeEnum'
+import { TestScriptRequestMethodCodeEnum } from './TestScriptRequestMethodCodeEnum'
 import { TestScript_RequestHeader } from './TestScript_RequestHeader'
 
 export class TestScript_Operation      extends BackboneElement
@@ -9,13 +9,14 @@ export class TestScript_Operation      extends BackboneElement
 
    static def : string = 'TestScript_Operation';
    type : Coding ;
-   resource : FHIRDefinedTypeEnum ;
+   resource : string ;
    label : string ;
    description : string ;
    accept : string ;
    contentType : string ;
    destination : string ;
    encodeRequestUrl : string ;
+   method : TestScriptRequestMethodCodeEnum ;
    origin : string ;
    params : string ;
    requestHeader : TestScript_RequestHeader [];

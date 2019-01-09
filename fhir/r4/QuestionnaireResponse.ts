@@ -14,7 +14,7 @@ export class QuestionnaireResponse      extends DomainResource
    questionnaire : string ;
    status : QuestionnaireResponseStatusEnum ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    authored : string ;
    author : Reference ;
    source : Reference ;

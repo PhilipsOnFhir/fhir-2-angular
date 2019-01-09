@@ -1,6 +1,7 @@
 import { BackboneElement } from './BackboneElement'
 import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
+import { Expression } from './Expression'
 
 export class Measure_SupplementalData      extends BackboneElement
 {
@@ -9,6 +10,5 @@ export class Measure_SupplementalData      extends BackboneElement
    code : CodeableConcept ;
    usage : CodeableConcept [];
    description : string ;
-   criteria : string ;
-   path : string ;
+   criteria : Expression ;
 }

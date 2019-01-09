@@ -13,7 +13,9 @@ import { PlanDefinition_DynamicValue } from './PlanDefinition_DynamicValue'
 import { PlanDefinition_Participant } from './PlanDefinition_Participant'
 import { PlanDefinition_RelatedAction } from './PlanDefinition_RelatedAction'
 import { Range } from './Range'
+import { Reference } from './Reference'
 import { RelatedArtifact } from './RelatedArtifact'
+import { RequestPriorityEnum } from './RequestPriorityEnum'
 import { Timing } from './Timing'
 import { TriggerDefinition } from './TriggerDefinition'
 
@@ -25,10 +27,13 @@ export class PlanDefinition_Action      extends BackboneElement
    title : string ;
    description : string ;
    textEquivalent : string ;
+   priority : RequestPriorityEnum ;
    code : CodeableConcept [];
    reason : CodeableConcept [];
    documentation : RelatedArtifact [];
    goalId : string [];
+   subjectCodeableConcept : CodeableConcept ;
+   subjectReference : Reference ;
    trigger : TriggerDefinition [];
    condition : PlanDefinition_Condition [];
    input : DataRequirement [];
@@ -47,7 +52,8 @@ export class PlanDefinition_Action      extends BackboneElement
    requiredBehavior : ActionRequiredBehaviorEnum ;
    precheckBehavior : ActionPrecheckBehaviorEnum ;
    cardinalityBehavior : ActionCardinalityBehaviorEnum ;
-   definition : string ;
+   definitionCanonical : string ;
+   definitionUri : string ;
    transform : string ;
    dynamicValue : PlanDefinition_DynamicValue [];
    action : PlanDefinition_Action [];

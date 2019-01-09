@@ -10,4 +10,5 @@ export enum AppointmentStatusEnum{
     NOSHOW = 'noshow',
     PENDING = 'pending',
     PROPOSED = 'proposed',
+    WAITLIST = 'waitlist',
 }

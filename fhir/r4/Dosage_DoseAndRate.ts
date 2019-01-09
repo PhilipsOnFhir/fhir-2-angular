@@ -1,11 +1,11 @@
+import { BackboneElement } from './BackboneElement'
 import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
-import { Element } from './Element'
 import { Quantity } from './Quantity'
 import { Range } from './Range'
 import { Ratio } from './Ratio'
 
-export class Dosage_DoseAndRate      extends Element
+export class Dosage_DoseAndRate      extends BackboneElement
 {
 
    static def : string = 'Dosage_DoseAndRate';

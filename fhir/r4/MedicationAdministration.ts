@@ -2,7 +2,6 @@ import { Annotation } from './Annotation'
 import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
 import { Identifier } from './Identifier'
-import { MedicationAdministrationStatusEnum } from './MedicationAdministrationStatusEnum'
 import { MedicationAdministration_Dosage } from './MedicationAdministration_Dosage'
 import { MedicationAdministration_Performer } from './MedicationAdministration_Performer'
 import { Period } from './Period'
@@ -15,7 +14,8 @@ export class MedicationAdministration      extends DomainResource
    identifier : Identifier [];
    instantiates : string [];
    partOf : Reference [];
-   status : MedicationAdministrationStatusEnum ;
+   status : string ;
+   statusReason : CodeableConcept [];
    category : CodeableConcept ;
    medicationCodeableConcept : CodeableConcept ;
    medicationReference : Reference ;
@@ -25,7 +25,6 @@ export class MedicationAdministration      extends DomainResource
    effectiveDateTime : string ;
    effectivePeriod : Period ;
    performer : MedicationAdministration_Performer [];
-   statusReason : CodeableConcept [];
    reasonCode : CodeableConcept [];
    reasonReference : Reference [];
    request : Reference ;

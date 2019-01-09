@@ -6,7 +6,6 @@ import { Identifier } from './Identifier'
 import { Period } from './Period'
 import { PublicationStatusEnum } from './PublicationStatusEnum'
 import { Questionnaire_Item } from './Questionnaire_Item'
-import { ResourceTypeEnum } from './ResourceTypeEnum'
 import { UsageContext } from './UsageContext'
 
 export class Questionnaire      extends DomainResource
@@ -21,7 +20,7 @@ export class Questionnaire      extends DomainResource
    derivedFrom : string [];
    status : PublicationStatusEnum ;
    experimental : string ;
-   subjectType : ResourceTypeEnum [];
+   subjectType : string [];
    date : string ;
    publisher : string ;
    contact : ContactDetail [];

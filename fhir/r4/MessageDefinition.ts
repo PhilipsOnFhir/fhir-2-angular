@@ -14,7 +14,7 @@ export class MessageDefinition      extends DomainResource
 
    static def : string = 'MessageDefinition';
    url : string ;
-   identifier : Identifier ;
+   identifier : Identifier [];
    version : string ;
    name : string ;
    title : string ;
@@ -37,4 +37,5 @@ export class MessageDefinition      extends DomainResource
    focus : MessageDefinition_Focus [];
    responseRequired : string ;
    allowedResponse : MessageDefinition_AllowedResponse [];
+   graph : string [];
 }

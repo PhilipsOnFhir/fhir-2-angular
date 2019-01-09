@@ -24,7 +24,7 @@ export class CommunicationRequest      extends DomainResource
    medium : CodeableConcept [];
    subject : Reference ;
    about : Reference [];
-   context : Reference ;
+   encounter : Reference ;
    payload : CommunicationRequest_Payload [];
    occurrenceDateTime : string ;
    occurrencePeriod : Period ;

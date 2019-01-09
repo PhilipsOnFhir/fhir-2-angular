@@ -7,7 +7,7 @@ export class Procedure_Performer      extends BackboneElement
 {
 
    static def : string = 'Procedure_Performer';
-   role : CodeableConcept ;
+   function : CodeableConcept ;
    actor : Reference ;
    onBehalfOf : Reference ;
 }

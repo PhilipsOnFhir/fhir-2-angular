@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Jun 22, 2018 15:13+0000 for FHIR v3.4.0 
+  Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0 
 
   Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -51,7 +51,7 @@
         <xs:sequence>
           <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this structure map when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this structure map is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this structure map when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this structure map is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the structure map is stored on different servers.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -106,7 +106,7 @@
           </xs:element>
           <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate structure map instances.</xs:documentation>
+              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate structure map instances.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -152,7 +152,7 @@
         <xs:sequence>
           <xs:element name="url" minOccurs="1" maxOccurs="1" type="canonical">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The canonical URL that identifies the structure.</xs:documentation>
+              <xs:documentation xml:lang="en">The canonical reference to the structure.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="mode" minOccurs="1" maxOccurs="1" type="StructureMapModelMode">
@@ -514,7 +514,12 @@
                 <xs:documentation xml:lang="en">A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)</xs:documentation>
               </xs:annotation>
              </xs:element>
-            <xs:element name="defaultValueParameterDefinition" type="ParameterDefinition" minOccurs="0">
+            <xs:element name="defaultValueContactDetail" type="ContactDetail" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)</xs:documentation>
+              </xs:annotation>
+             </xs:element>
+            <xs:element name="defaultValueContributor" type="Contributor" minOccurs="0">
               <xs:annotation>
                 <xs:documentation xml:lang="en">A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)</xs:documentation>
               </xs:annotation>
@@ -524,17 +529,17 @@
                 <xs:documentation xml:lang="en">A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)</xs:documentation>
               </xs:annotation>
              </xs:element>
+            <xs:element name="defaultValueExpression" type="Expression" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)</xs:documentation>
+              </xs:annotation>
+             </xs:element>
+            <xs:element name="defaultValueParameterDefinition" type="ParameterDefinition" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)</xs:documentation>
+              </xs:annotation>
+             </xs:element>
             <xs:element name="defaultValueRelatedArtifact" type="RelatedArtifact" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)</xs:documentation>
-              </xs:annotation>
-             </xs:element>
-            <xs:element name="defaultValueContactDetail" type="ContactDetail" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)</xs:documentation>
-              </xs:annotation>
-             </xs:element>
-            <xs:element name="defaultValueContributor" type="Contributor" minOccurs="0">
               <xs:annotation>
                 <xs:documentation xml:lang="en">A value to use if there is no existing value in the source object. (choose any one of defaultValue*, but only one)</xs:documentation>
               </xs:annotation>
@@ -577,6 +582,11 @@
           <xs:element name="check" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
               <xs:documentation xml:lang="en">FHIRPath expression  - must be true or the mapping engine throws an error instead of completing.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="logMessage" minOccurs="0" maxOccurs="1" type="string">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">A FHIRPath expression which specifies a message to put in the transform log when content matching the source rule is found.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -707,7 +717,7 @@
   </xs:simpleType>
   <xs:complexType name="StructureMapInputMode">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Mode for this instance of data</xs:documentation>
+      <xs:documentation xml:lang="en">Mode for this instance of data.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -732,7 +742,7 @@
   </xs:simpleType>
   <xs:complexType name="StructureMapContextType">
     <xs:annotation>
-      <xs:documentation xml:lang="en">How to interpret the context</xs:documentation>
+      <xs:documentation xml:lang="en">How to interpret the context.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -767,7 +777,7 @@
   </xs:simpleType>
   <xs:complexType name="StructureMapTargetListMode">
     <xs:annotation>
-      <xs:documentation xml:lang="en">If field is a list, how to manage the production</xs:documentation>
+      <xs:documentation xml:lang="en">If field is a list, how to manage the production.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -867,7 +877,7 @@
   </xs:simpleType>
   <xs:complexType name="StructureMapTransform">
     <xs:annotation>
-      <xs:documentation xml:lang="en">How data is copied/created</xs:documentation>
+      <xs:documentation xml:lang="en">How data is copied/created.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -907,7 +917,7 @@
   </xs:simpleType>
   <xs:complexType name="StructureMapSourceListMode">
     <xs:annotation>
-      <xs:documentation xml:lang="en">If field is a list, how to manage the source</xs:documentation>
+      <xs:documentation xml:lang="en">If field is a list, how to manage the source.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -937,7 +947,7 @@
   </xs:simpleType>
   <xs:complexType name="StructureMapGroupTypeMode">
     <xs:annotation>
-      <xs:documentation xml:lang="en">If this is the default rule set to apply for the source type, or this combination of types</xs:documentation>
+      <xs:documentation xml:lang="en">If this is the default rule set to apply for the source type, or this combination of types.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -972,7 +982,7 @@
   </xs:simpleType>
   <xs:complexType name="StructureMapModelMode">
     <xs:annotation>
-      <xs:documentation xml:lang="en">How the referenced structure is used in this mapping</xs:documentation>
+      <xs:documentation xml:lang="en">How the referenced structure is used in this mapping.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>

@@ -8,7 +8,9 @@ export class ExplanationOfBenefit_Procedure      extends BackboneElement
 
    static def : string = 'ExplanationOfBenefit_Procedure';
    sequence : string ;
+   type : CodeableConcept [];
    date : string ;
    procedureCodeableConcept : CodeableConcept ;
    procedureReference : Reference ;
+   udi : Reference [];
 }

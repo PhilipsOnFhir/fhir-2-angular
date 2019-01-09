@@ -7,6 +7,7 @@ export class DataRequirement_DateFilter      extends Element
 
    static def : string = 'DataRequirement_DateFilter';
    path : string ;
+   searchParam : string ;
    valueDateTime : string ;
    valuePeriod : Period ;
    valueDuration : string ;

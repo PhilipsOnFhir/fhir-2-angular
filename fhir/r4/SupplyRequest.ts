@@ -13,7 +13,7 @@ export class SupplyRequest      extends DomainResource
 {
 
    static def : string = 'SupplyRequest';
-   identifier : Identifier ;
+   identifier : Identifier [];
    status : SupplyRequestStatusEnum ;
    category : CodeableConcept ;
    priority : RequestPriorityEnum ;

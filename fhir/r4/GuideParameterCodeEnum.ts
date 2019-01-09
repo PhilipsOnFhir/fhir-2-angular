@@ -1,9 +1,8 @@
 import { DomainResource } from './DomainResource'
 
 export enum GuideParameterCodeEnum{
-    APPLY_BUSINESS_VERSION = 'apply-business-version',
-    APPLY_JURISDICTION = 'apply-jurisdiction',
-    EXPANSION_PROFILE = 'expansion-profile',
+    APPLY = 'apply',
+    EXPANSION_PARAMETER = 'expansion-parameter',
     GENERATE_JSON = 'generate-json',
     GENERATE_TURTLE = 'generate-turtle',
     GENERATE_XML = 'generate-xml',

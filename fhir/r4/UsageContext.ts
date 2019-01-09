@@ -4,6 +4,7 @@ import { DomainResource } from './DomainResource'
 import { Element } from './Element'
 import { Quantity } from './Quantity'
 import { Range } from './Range'
+import { Reference } from './Reference'
 
 export class UsageContext      extends Element
 {
@@ -13,4 +14,5 @@ export class UsageContext      extends Element
    valueCodeableConcept : CodeableConcept ;
    valueQuantity : Quantity ;
    valueRange : Range ;
+   valueReference : Reference ;
 }

@@ -15,7 +15,7 @@ export class ImagingStudy      extends DomainResource
    status : ImagingStudyStatusEnum ;
    modality : Coding [];
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    started : string ;
    basedOn : Reference [];
    referrer : Reference ;
@@ -29,5 +29,6 @@ export class ImagingStudy      extends DomainResource
    reasonCode : CodeableConcept [];
    reasonReference : Reference [];
    note : Annotation [];
+   description : string ;
    series : ImagingStudy_Series [];
 }

@@ -19,7 +19,7 @@ export class BiologicallyDerivedProduct      extends DomainResource
    status : BiologicallyDerivedProductStatusEnum ;
    request : Reference [];
    quantity : string ;
-   parent : Reference ;
+   parent : Reference [];
    collection : BiologicallyDerivedProduct_Collection ;
    processing : BiologicallyDerivedProduct_Processing [];
    manipulation : BiologicallyDerivedProduct_Manipulation ;

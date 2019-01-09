@@ -11,5 +11,6 @@ export class Claim_Diagnosis      extends BackboneElement
    diagnosisCodeableConcept : CodeableConcept ;
    diagnosisReference : Reference ;
    type : CodeableConcept [];
+   onAdmission : CodeableConcept ;
    packageCode : CodeableConcept ;
 }

@@ -6,6 +6,7 @@ export class MedicinalProductClinicals_Interactions      extends BackboneElement
 {
 
    static def : string = 'MedicinalProductClinicals_Interactions';
+   interaction : string ;
    interactant : CodeableConcept [];
    type : CodeableConcept ;
    effect : CodeableConcept ;

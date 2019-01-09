@@ -1,6 +1,5 @@
 import { CodeableConcept } from './CodeableConcept'
 import { ContactDetail } from './ContactDetail'
-import { Contributor } from './Contributor'
 import { DomainResource } from './DomainResource'
 import { Identifier } from './Identifier'
 import { Period } from './Period'
@@ -39,7 +38,10 @@ export class PlanDefinition      extends DomainResource
    lastReviewDate : string ;
    effectivePeriod : Period ;
    topic : CodeableConcept [];
-   contributor : Contributor [];
+   author : ContactDetail [];
+   editor : ContactDetail [];
+   reviewer : ContactDetail [];
+   endorser : ContactDetail [];
    relatedArtifact : RelatedArtifact [];
    library : string [];
    goal : PlanDefinition_Goal [];

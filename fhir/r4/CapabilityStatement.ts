@@ -7,6 +7,7 @@ import { CapabilityStatement_Software } from './CapabilityStatement_Software'
 import { CodeableConcept } from './CodeableConcept'
 import { ContactDetail } from './ContactDetail'
 import { DomainResource } from './DomainResource'
+import { FHIRVersionEnum } from './FHIRVersionEnum'
 import { PublicationStatusEnum } from './PublicationStatusEnum'
 import { UsageContext } from './UsageContext'
 
@@ -30,9 +31,10 @@ export class CapabilityStatement      extends DomainResource
    copyright : string ;
    kind : CapabilityStatementKindEnum ;
    instantiates : string [];
+   imports : string [];
    software : CapabilityStatement_Software ;
    implementation : CapabilityStatement_Implementation ;
-   fhirVersion : string ;
+   fhirVersion : FHIRVersionEnum ;
    format : string [];
    patchFormat : string [];
    implementationGuide : string [];

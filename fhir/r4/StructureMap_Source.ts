@@ -10,6 +10,7 @@ import { Contributor } from './Contributor'
 import { DataRequirement } from './DataRequirement'
 import { DomainResource } from './DomainResource'
 import { Dosage } from './Dosage'
+import { Expression } from './Expression'
 import { HumanName } from './HumanName'
 import { Identifier } from './Identifier'
 import { Money } from './Money'
@@ -75,11 +76,12 @@ export class StructureMap_Source      extends BackboneElement
    defaultValueSampledData : SampledData ;
    defaultValueSignature : Signature ;
    defaultValueTiming : Timing ;
-   defaultValueParameterDefinition : ParameterDefinition ;
-   defaultValueDataRequirement : DataRequirement ;
-   defaultValueRelatedArtifact : RelatedArtifact ;
    defaultValueContactDetail : ContactDetail ;
    defaultValueContributor : Contributor ;
+   defaultValueDataRequirement : DataRequirement ;
+   defaultValueExpression : Expression ;
+   defaultValueParameterDefinition : ParameterDefinition ;
+   defaultValueRelatedArtifact : RelatedArtifact ;
    defaultValueTriggerDefinition : TriggerDefinition ;
    defaultValueUsageContext : UsageContext ;
    defaultValueDosage : Dosage ;
@@ -88,4 +90,5 @@ export class StructureMap_Source      extends BackboneElement
    variable : string ;
    condition : string ;
    check : string ;
+   logMessage : string ;
 }

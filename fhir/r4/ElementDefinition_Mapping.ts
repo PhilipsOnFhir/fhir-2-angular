@@ -1,7 +1,7 @@
+import { BackboneElement } from './BackboneElement'
 import { DomainResource } from './DomainResource'
-import { Element } from './Element'
 
-export class ElementDefinition_Mapping      extends Element
+export class ElementDefinition_Mapping      extends BackboneElement
 {
 
    static def : string = 'ElementDefinition_Mapping';

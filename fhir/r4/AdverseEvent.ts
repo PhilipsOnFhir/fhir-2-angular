@@ -14,7 +14,7 @@ export class AdverseEvent      extends DomainResource
    category : CodeableConcept [];
    event : CodeableConcept ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    date : string ;
    detected : string ;
    recordedDate : string ;

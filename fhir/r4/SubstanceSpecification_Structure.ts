@@ -4,7 +4,7 @@ import { DomainResource } from './DomainResource'
 import { Reference } from './Reference'
 import { SubstanceSpecification_Isotope } from './SubstanceSpecification_Isotope'
 import { SubstanceSpecification_MolecularWeight } from './SubstanceSpecification_MolecularWeight'
-import { SubstanceSpecification_StructuralRepresentation } from './SubstanceSpecification_StructuralRepresentation'
+import { SubstanceSpecification_Representation } from './SubstanceSpecification_Representation'
 
 export class SubstanceSpecification_Structure      extends BackboneElement
 {
@@ -16,6 +16,6 @@ export class SubstanceSpecification_Structure      extends BackboneElement
    molecularFormulaByMoiety : string ;
    isotope : SubstanceSpecification_Isotope [];
    molecularWeight : SubstanceSpecification_MolecularWeight ;
-   referenceSource : Reference [];
-   structuralRepresentation : SubstanceSpecification_StructuralRepresentation [];
+   source : Reference [];
+   representation : SubstanceSpecification_Representation [];
 }

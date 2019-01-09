@@ -18,7 +18,7 @@ export class RiskAssessment      extends DomainResource
    method : CodeableConcept ;
    code : CodeableConcept ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    occurrenceDateTime : string ;
    occurrencePeriod : Period ;
    condition : Reference ;

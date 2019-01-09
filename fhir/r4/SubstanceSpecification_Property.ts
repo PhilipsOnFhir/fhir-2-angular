@@ -1,16 +1,18 @@
 import { BackboneElement } from './BackboneElement'
 import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
-import { Identifier } from './Identifier'
+import { Quantity } from './Quantity'
+import { Reference } from './Reference'
 
 export class SubstanceSpecification_Property      extends BackboneElement
 {
 
    static def : string = 'SubstanceSpecification_Property';
-   type : CodeableConcept ;
-   name : CodeableConcept ;
+   category : CodeableConcept ;
+   code : CodeableConcept ;
    parameters : string ;
-   substanceId : Identifier ;
-   substanceName : string ;
-   amount : string ;
+   definingSubstanceReference : Reference ;
+   definingSubstanceCodeableConcept : CodeableConcept ;
+   amountQuantity : Quantity ;
+   amountString : string ;
 }

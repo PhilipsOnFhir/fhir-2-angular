@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Jun 22, 2018 15:13+0000 for FHIR v3.4.0 
+  Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0 
 
   Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -51,7 +51,7 @@
         <xs:sequence>
           <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this questionnaire is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this questionnaire when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this questionnaire is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the questionnaire is stored on different servers.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
@@ -89,7 +89,7 @@
               <xs:documentation xml:lang="en">A Boolean value to indicate that this questionnaire is authored for testing purposes (or education/evaluation/marketing) and is not intended to be used for genuine usage.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="subjectType" minOccurs="0" maxOccurs="unbounded" type="ResourceType">
+          <xs:element name="subjectType" minOccurs="0" maxOccurs="unbounded" type="code">
             <xs:annotation>
               <xs:documentation xml:lang="en">The types of subjects that can be the subject of responses created for the questionnaire.</xs:documentation>
            </xs:annotation>
@@ -116,7 +116,7 @@
           </xs:element>
           <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate questionnaire instances.</xs:documentation>
+              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate questionnaire instances.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -177,15 +177,15 @@
           </xs:element>
           <xs:element name="definition" minOccurs="0" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A reference to an [[[ElementDefinition]]] that provides the details for the item. If a definition is provided, then the following element values can be derived from the definition:   
+              <xs:documentation xml:lang="en">This element is a URI that refers to an [[[ElementDefinition]]] that provides information about this item, including information that might otherwise be included in the instance of the Questionnaire resource. A detailed description of the construction of the URI is shown in Comments, below. If this element is present then the following element values MAY be derived from the Element Definition if the corresponding elements of this Questionnaire resource instance have no value:
 
 * code (ElementDefinition.code) 
 * type (ElementDefinition.type) 
 * required (ElementDefinition.min) 
 * repeats (ElementDefinition.max) 
 * maxLength (ElementDefinition.maxLength) 
-* options (ElementDefinition.binding)  
-Any information provided in these elements on a Questionnaire Item overrides the information from the definition, and some are require for efficient implementation (e.g. enforcing invariants).</xs:documentation>
+* answerValueSet (ElementDefinition.binding)
+* options (ElementDefinition.binding).</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="code" minOccurs="0" maxOccurs="unbounded" type="Coding">
@@ -225,7 +225,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
           </xs:element>
           <xs:element name="repeats" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An indication, if true, that the item may occur multiple times in the response, collecting multiple answers answers for questions or multiple sets of answers for groups.</xs:documentation>
+              <xs:documentation xml:lang="en">An indication, if true, that the item may occur multiple times in the response, collecting multiple answers for questions or multiple sets of answers for groups.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="readOnly" minOccurs="0" maxOccurs="1" type="boolean">
@@ -238,12 +238,12 @@ Any information provided in these elements on a Questionnaire Item overrides the
               <xs:documentation xml:lang="en">The maximum number of characters that are permitted in the answer to be considered a &quot;valid&quot; QuestionnaireResponse.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="options" minOccurs="0" maxOccurs="1" type="canonical">
+          <xs:element name="answerValueSet" minOccurs="0" maxOccurs="1" type="canonical">
             <xs:annotation>
               <xs:documentation xml:lang="en">A reference to a value set containing a list of codes representing permitted answers for a &quot;choice&quot; or &quot;open-choice&quot; question.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="option" type="Questionnaire.Option" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="answerOption" type="Questionnaire.AnswerOption" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">One of the permitted answers for a &quot;choice&quot; or &quot;open-choice&quot; question.</xs:documentation>
            </xs:annotation>
@@ -333,7 +333,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="Questionnaire.Option">
+  <xs:complexType name="Questionnaire.AnswerOption">
     <xs:annotation>
       <xs:documentation xml:lang="en">A structured set of questions intended to guide the collection of answers from end-users. Questionnaires provide detailed control over order, presentation, phraseology and grouping to allow coherent, consistent data collection.</xs:documentation>
     </xs:annotation>
@@ -365,9 +365,14 @@ Any information provided in these elements on a Questionnaire Item overrides the
                 <xs:documentation xml:lang="en">A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)</xs:documentation>
               </xs:annotation>
              </xs:element>
+            <xs:element name="valueReference" type="Reference" minOccurs="0">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">A potential answer that's allowed as the answer to this question. (choose any one of value*, but only one)</xs:documentation>
+              </xs:annotation>
+             </xs:element>
           <xs:element name="initialSelected" minOccurs="0" maxOccurs="1" type="boolean">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Indicates whether the option value is selected when the list of options is initially shown.</xs:documentation>
+              <xs:documentation xml:lang="en">Indicates whether the answer value is selected when the list of possible answers is initially shown.</xs:documentation>
            </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -531,7 +536,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
   </xs:simpleType>
   <xs:complexType name="QuestionnaireItemType">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Distinguishes groups from questions and display text and indicates data type for questions</xs:documentation>
+      <xs:documentation xml:lang="en">Distinguishes groups from questions and display text and indicates data type for questions.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -556,7 +561,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
   </xs:simpleType>
   <xs:complexType name="EnableWhenBehavior">
     <xs:annotation>
-      <xs:documentation xml:lang="en">Controls how multiple enableWhen values are interpreted -  whether all or any must be true</xs:documentation>
+      <xs:documentation xml:lang="en">Controls how multiple enableWhen values are interpreted -  whether all or any must be true.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -606,7 +611,7 @@ Any information provided in these elements on a Questionnaire Item overrides the
   </xs:simpleType>
   <xs:complexType name="QuestionnaireItemOperator">
     <xs:annotation>
-      <xs:documentation xml:lang="en">The criteria by which a question is enabled</xs:documentation>
+      <xs:documentation xml:lang="en">The criteria by which a question is enabled.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>

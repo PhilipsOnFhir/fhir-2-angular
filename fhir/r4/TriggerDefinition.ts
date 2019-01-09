@@ -1,9 +1,9 @@
 import { DataRequirement } from './DataRequirement'
 import { DomainResource } from './DomainResource'
 import { Element } from './Element'
+import { Expression } from './Expression'
 import { Reference } from './Reference'
 import { Timing } from './Timing'
-import { TriggerDefinition_Condition } from './TriggerDefinition_Condition'
 import { TriggerTypeEnum } from './TriggerTypeEnum'
 
 export class TriggerDefinition      extends Element
@@ -16,6 +16,6 @@ export class TriggerDefinition      extends Element
    timingReference : Reference ;
    timingDate : string ;
    timingDateTime : string ;
-   data : DataRequirement ;
-   condition : TriggerDefinition_Condition ;
+   data : DataRequirement [];
+   condition : Expression ;
 }

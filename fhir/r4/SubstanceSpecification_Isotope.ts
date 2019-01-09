@@ -9,10 +9,9 @@ export class SubstanceSpecification_Isotope      extends BackboneElement
 {
 
    static def : string = 'SubstanceSpecification_Isotope';
-   nuclideId : Identifier ;
-   nuclideName : CodeableConcept ;
-   substitutionType : CodeableConcept ;
-   nuclideHalfLife : Quantity ;
-   amount : string ;
+   identifier : Identifier ;
+   name : CodeableConcept ;
+   substitution : CodeableConcept ;
+   halfLife : Quantity ;
    molecularWeight : SubstanceSpecification_MolecularWeight ;
 }

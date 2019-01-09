@@ -8,6 +8,7 @@ export class RelatedArtifact      extends Element
 
    static def : string = 'RelatedArtifact';
    type : RelatedArtifactTypeEnum ;
+   label : string ;
    display : string ;
    citation : string ;
    url : string ;

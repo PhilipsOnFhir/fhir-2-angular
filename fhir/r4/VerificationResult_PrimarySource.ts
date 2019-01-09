@@ -7,9 +7,9 @@ export class VerificationResult_PrimarySource      extends BackboneElement
 {
 
    static def : string = 'VerificationResult_PrimarySource';
-   organization : Reference ;
+   who : Reference ;
    type : CodeableConcept [];
-   validationProcess : CodeableConcept [];
+   communicationMethod : CodeableConcept [];
    validationStatus : CodeableConcept ;
    validationDate : string ;
    canPushUpdates : CodeableConcept ;

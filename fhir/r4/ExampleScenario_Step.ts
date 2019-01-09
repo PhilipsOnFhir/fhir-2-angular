@@ -11,5 +11,5 @@ export class ExampleScenario_Step      extends BackboneElement
    process : ExampleScenario_Process [];
    pause : string ;
    operation : ExampleScenario_Operation ;
-   alternative : ExampleScenario_Alternative ;
+   alternative : ExampleScenario_Alternative [];
 }

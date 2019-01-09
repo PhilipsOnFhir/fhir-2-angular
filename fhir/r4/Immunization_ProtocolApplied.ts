@@ -9,7 +9,9 @@ export class Immunization_ProtocolApplied      extends BackboneElement
    static def : string = 'Immunization_ProtocolApplied';
    series : string ;
    authority : Reference ;
-   targetDisease : CodeableConcept ;
+   targetDisease : CodeableConcept [];
    doseNumberPositiveInt : string ;
    doseNumberString : string ;
+   seriesDosesPositiveInt : string ;
+   seriesDosesString : string ;
 }

@@ -6,14 +6,13 @@ import { ConditionalDeleteStatusEnum } from './ConditionalDeleteStatusEnum'
 import { ConditionalReadStatusEnum } from './ConditionalReadStatusEnum'
 import { DomainResource } from './DomainResource'
 import { ReferenceHandlingPolicyEnum } from './ReferenceHandlingPolicyEnum'
-import { ResourceTypeEnum } from './ResourceTypeEnum'
 import { ResourceVersionPolicyEnum } from './ResourceVersionPolicyEnum'
 
 export class CapabilityStatement_Resource      extends BackboneElement
 {
 
    static def : string = 'CapabilityStatement_Resource';
-   type : ResourceTypeEnum ;
+   type : string ;
    profile : string ;
    supportedProfile : string [];
    documentation : string ;

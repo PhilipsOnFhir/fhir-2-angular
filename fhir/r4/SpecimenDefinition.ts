@@ -1,7 +1,7 @@
 import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
 import { Identifier } from './Identifier'
-import { SpecimenDefinition_SpecimenToLab } from './SpecimenDefinition_SpecimenToLab'
+import { SpecimenDefinition_TypeTested } from './SpecimenDefinition_TypeTested'
 
 export class SpecimenDefinition      extends DomainResource
 {
@@ -9,8 +9,8 @@ export class SpecimenDefinition      extends DomainResource
    static def : string = 'SpecimenDefinition';
    identifier : Identifier ;
    typeCollected : CodeableConcept ;
-   patientPreparation : string ;
+   patientPreparation : CodeableConcept [];
    timeAspect : string ;
    collection : CodeableConcept [];
-   specimenToLab : SpecimenDefinition_SpecimenToLab [];
+   typeTested : SpecimenDefinition_TypeTested [];
 }

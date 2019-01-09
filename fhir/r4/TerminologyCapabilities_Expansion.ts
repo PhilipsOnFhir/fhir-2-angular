@@ -1,5 +1,6 @@
 import { BackboneElement } from './BackboneElement'
 import { DomainResource } from './DomainResource'
+import { TerminologyCapabilities_Parameter } from './TerminologyCapabilities_Parameter'
 
 export class TerminologyCapabilities_Expansion      extends BackboneElement
 {
@@ -8,7 +9,6 @@ export class TerminologyCapabilities_Expansion      extends BackboneElement
    hierarchical : string ;
    paging : string ;
    incomplete : string ;
-   definition : string ;
-   profile : string [];
+   parameter : TerminologyCapabilities_Parameter [];
    textFilter : string ;
 }

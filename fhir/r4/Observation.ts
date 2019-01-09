@@ -1,3 +1,4 @@
+import { Annotation } from './Annotation'
 import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
 import { Identifier } from './Identifier'
@@ -23,11 +24,12 @@ export class Observation      extends DomainResource
    category : CodeableConcept [];
    code : CodeableConcept ;
    subject : Reference ;
-   focus : Reference ;
-   context : Reference ;
+   focus : Reference [];
+   encounter : Reference ;
    effectiveDateTime : string ;
    effectivePeriod : Period ;
    effectiveTiming : Timing ;
+   effectiveInstant : string ;
    issued : string ;
    performer : Reference [];
    valueQuantity : Quantity ;
@@ -42,8 +44,8 @@ export class Observation      extends DomainResource
    valueDateTime : string ;
    valuePeriod : Period ;
    dataAbsentReason : CodeableConcept ;
-   interpretation : CodeableConcept ;
-   comment : string ;
+   interpretation : CodeableConcept [];
+   note : Annotation [];
    bodySite : CodeableConcept ;
    method : CodeableConcept ;
    specimen : Reference ;

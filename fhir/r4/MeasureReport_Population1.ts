@@ -9,5 +9,5 @@ export class MeasureReport_Population1      extends BackboneElement
    static def : string = 'MeasureReport_Population1';
    code : CodeableConcept ;
    count : string ;
-   subjects : Reference ;
+   subjectResults : Reference ;
 }

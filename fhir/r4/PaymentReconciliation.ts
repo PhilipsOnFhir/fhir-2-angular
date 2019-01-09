@@ -17,13 +17,15 @@ export class PaymentReconciliation      extends DomainResource
    status : FinancialResourceStatusCodesEnum ;
    period : Period ;
    created : string ;
-   organization : Reference ;
+   paymentIssuer : Reference ;
    request : Reference ;
+   requestor : Reference ;
    outcome : RemittanceOutcomeEnum ;
    disposition : string ;
-   requestProvider : Reference ;
+   paymentDate : string ;
+   paymentAmount : Money ;
+   paymentIdentifier : Identifier ;
    detail : PaymentReconciliation_Detail [];
-   form : CodeableConcept ;
-   total : Money ;
+   formCode : CodeableConcept ;
    processNote : PaymentReconciliation_ProcessNote [];
 }

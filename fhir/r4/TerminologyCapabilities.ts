@@ -1,3 +1,4 @@
+import { CapabilityStatementKindEnum } from './CapabilityStatementKindEnum'
 import { CodeSearchSupportEnum } from './CodeSearchSupportEnum'
 import { CodeableConcept } from './CodeableConcept'
 import { ContactDetail } from './ContactDetail'
@@ -6,6 +7,8 @@ import { PublicationStatusEnum } from './PublicationStatusEnum'
 import { TerminologyCapabilities_Closure } from './TerminologyCapabilities_Closure'
 import { TerminologyCapabilities_CodeSystem } from './TerminologyCapabilities_CodeSystem'
 import { TerminologyCapabilities_Expansion } from './TerminologyCapabilities_Expansion'
+import { TerminologyCapabilities_Implementation } from './TerminologyCapabilities_Implementation'
+import { TerminologyCapabilities_Software } from './TerminologyCapabilities_Software'
 import { TerminologyCapabilities_Translation } from './TerminologyCapabilities_Translation'
 import { TerminologyCapabilities_ValidateCode } from './TerminologyCapabilities_ValidateCode'
 import { UsageContext } from './UsageContext'
@@ -28,6 +31,9 @@ export class TerminologyCapabilities      extends DomainResource
    jurisdiction : CodeableConcept [];
    purpose : string ;
    copyright : string ;
+   kind : CapabilityStatementKindEnum ;
+   software : TerminologyCapabilities_Software ;
+   implementation : TerminologyCapabilities_Implementation ;
    lockedDate : string ;
    codeSystem : TerminologyCapabilities_CodeSystem [];
    expansion : TerminologyCapabilities_Expansion ;

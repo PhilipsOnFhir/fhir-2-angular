@@ -7,6 +7,7 @@ export class DataRequirement_CodeFilter      extends Element
 
    static def : string = 'DataRequirement_CodeFilter';
    path : string ;
+   searchParam : string ;
    valueSet : string ;
    code : Coding [];
 }

@@ -7,7 +7,7 @@ export class MedicinalProduct_Name      extends BackboneElement
 {
 
    static def : string = 'MedicinalProduct_Name';
-   fullName : string ;
+   productName : string ;
    namePart : MedicinalProduct_NamePart [];
    countryLanguage : MedicinalProduct_CountryLanguage [];
 }

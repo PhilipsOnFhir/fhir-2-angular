@@ -8,6 +8,7 @@ import { HumanName } from './HumanName'
 import { Identifier } from './Identifier'
 import { Period } from './Period'
 import { Reference } from './Reference'
+import { RelatedPerson_Communication } from './RelatedPerson_Communication'
 
 export class RelatedPerson      extends DomainResource
 {
@@ -24,4 +25,5 @@ export class RelatedPerson      extends DomainResource
    address : Address [];
    photo : Attachment [];
    period : Period ;
+   communication : RelatedPerson_Communication [];
 }

@@ -23,5 +23,6 @@ export class Specimen      extends DomainResource
    collection : Specimen_Collection ;
    processing : Specimen_Processing [];
    container : Specimen_Container [];
+   condition : CodeableConcept [];
    note : Annotation [];
 }

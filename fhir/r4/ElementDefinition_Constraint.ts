@@ -1,8 +1,8 @@
+import { BackboneElement } from './BackboneElement'
 import { ConstraintSeverityEnum } from './ConstraintSeverityEnum'
 import { DomainResource } from './DomainResource'
-import { Element } from './Element'
 
-export class ElementDefinition_Constraint      extends Element
+export class ElementDefinition_Constraint      extends BackboneElement
 {
 
    static def : string = 'ElementDefinition_Constraint';

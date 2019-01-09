@@ -12,12 +12,13 @@ export class Appointment      extends DomainResource
    static def : string = 'Appointment';
    identifier : Identifier [];
    status : AppointmentStatusEnum ;
+   cancelationReason : CodeableConcept ;
    serviceCategory : CodeableConcept [];
    serviceType : CodeableConcept [];
    specialty : CodeableConcept [];
    appointmentType : CodeableConcept ;
-   reason : CodeableConcept [];
-   indication : Reference [];
+   reasonCode : CodeableConcept [];
+   reasonReference : Reference [];
    priority : string ;
    description : string ;
    supportingInformation : Reference [];

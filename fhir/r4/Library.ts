@@ -1,7 +1,6 @@
 import { Attachment } from './Attachment'
 import { CodeableConcept } from './CodeableConcept'
 import { ContactDetail } from './ContactDetail'
-import { Contributor } from './Contributor'
 import { DataRequirement } from './DataRequirement'
 import { DomainResource } from './DomainResource'
 import { Identifier } from './Identifier'
@@ -40,7 +39,10 @@ export class Library      extends DomainResource
    lastReviewDate : string ;
    effectivePeriod : Period ;
    topic : CodeableConcept [];
-   contributor : Contributor [];
+   author : ContactDetail [];
+   editor : ContactDetail [];
+   reviewer : ContactDetail [];
+   endorser : ContactDetail [];
    relatedArtifact : RelatedArtifact [];
    parameter : ParameterDefinition [];
    dataRequirement : DataRequirement [];

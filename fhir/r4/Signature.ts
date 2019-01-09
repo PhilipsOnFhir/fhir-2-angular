@@ -9,11 +9,9 @@ export class Signature      extends Element
    static def : string = 'Signature';
    type : Coding [];
    when : string ;
-   whoUri : string ;
-   whoReference : Reference ;
-   onBehalfOfUri : string ;
-   onBehalfOfReference : Reference ;
+   who : Reference ;
+   onBehalfOf : Reference ;
    targetFormat : string ;
    sigFormat : string ;
-   blob : string ;
+   data : string ;
 }

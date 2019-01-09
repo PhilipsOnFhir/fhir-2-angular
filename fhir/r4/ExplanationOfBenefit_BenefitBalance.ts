@@ -8,7 +8,6 @@ export class ExplanationOfBenefit_BenefitBalance      extends BackboneElement
 
    static def : string = 'ExplanationOfBenefit_BenefitBalance';
    category : CodeableConcept ;
-   subCategory : CodeableConcept ;
    excluded : string ;
    name : string ;
    description : string ;

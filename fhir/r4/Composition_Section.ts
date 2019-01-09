@@ -12,6 +12,7 @@ export class Composition_Section      extends BackboneElement
    title : string ;
    code : CodeableConcept ;
    author : Reference [];
+   focus : Reference ;
    text : Narrative ;
    mode : ListModeEnum ;
    orderedBy : CodeableConcept ;

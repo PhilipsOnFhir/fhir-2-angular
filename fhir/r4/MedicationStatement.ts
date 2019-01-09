@@ -3,7 +3,7 @@ import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
 import { Dosage } from './Dosage'
 import { Identifier } from './Identifier'
-import { MedicationStatementStatusEnum } from './MedicationStatementStatusEnum'
+import { MedicationStatusCodesEnum } from './MedicationStatusCodesEnum'
 import { Period } from './Period'
 import { Reference } from './Reference'
 
@@ -14,7 +14,7 @@ export class MedicationStatement      extends DomainResource
    identifier : Identifier [];
    basedOn : Reference [];
    partOf : Reference [];
-   status : MedicationStatementStatusEnum ;
+   status : MedicationStatusCodesEnum ;
    statusReason : CodeableConcept [];
    category : CodeableConcept ;
    medicationCodeableConcept : CodeableConcept ;

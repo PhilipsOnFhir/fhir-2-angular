@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Jun 22, 2018 15:13+0000 for FHIR v3.4.0 
+  Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0 
 
   Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -51,7 +51,7 @@
         <xs:sequence>
           <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
             <xs:annotation>
-              <xs:documentation xml:lang="en">An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which this search parameter is (or will be) published.</xs:documentation>
+              <xs:documentation xml:lang="en">An absolute URI that is used to identify this search parameter when it is referenced in a specification, model, design or an instance; also called its canonical identifier. This SHOULD be globally unique and SHOULD be a literal address at which at which an authoritative instance of this search parameter is (or will be) published. This URL can be the target of a canonical reference. It SHALL remain the same when the search parameter is stored on different servers.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
@@ -96,12 +96,12 @@
           </xs:element>
           <xs:element name="description" minOccurs="1" maxOccurs="1" type="markdown">
             <xs:annotation>
-              <xs:documentation xml:lang="en">A free text natural language description of the search parameter from a consumer's perspective. and how it used.</xs:documentation>
+              <xs:documentation xml:lang="en">And how it used.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These terms may be used to assist with indexing and searching for appropriate search parameter instances.</xs:documentation>
+              <xs:documentation xml:lang="en">The content was developed with a focus and intent of supporting the contexts that are listed. These contexts may be general categories (gender, age, ...) or may be references to specific programs (insurance plans, studies, ...) and may be used to assist with indexing and searching for appropriate search parameter instances.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
@@ -119,14 +119,14 @@
               <xs:documentation xml:lang="en">The code used in the URL or the parameter name in a parameters resource for this search parameter.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="base" minOccurs="1" maxOccurs="unbounded" type="ResourceType">
+          <xs:element name="base" minOccurs="1" maxOccurs="unbounded" type="code">
             <xs:annotation>
               <xs:documentation xml:lang="en">The base resource type(s) that this search parameter can be used against.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="type" minOccurs="1" maxOccurs="1" type="SearchParamType">
             <xs:annotation>
-              <xs:documentation xml:lang="en">The type of value a search parameter refers to, and how the content is interpreted.</xs:documentation>
+              <xs:documentation xml:lang="en">The type of value that a search parameter may contain, and how the content is interpreted.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="expression" minOccurs="0" maxOccurs="1" type="string">
@@ -144,7 +144,7 @@
               <xs:documentation xml:lang="en">How the search parameter relates to the set of elements returned by evaluating the xpath query.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="target" minOccurs="0" maxOccurs="unbounded" type="ResourceType">
+          <xs:element name="target" minOccurs="0" maxOccurs="unbounded" type="code">
             <xs:annotation>
               <xs:documentation xml:lang="en">Types of resource (if a resource is referenced).</xs:documentation>
            </xs:annotation>
@@ -296,6 +296,16 @@
           <xs:documentation xml:lang="en">Type</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
+      <xs:enumeration value="identifier">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifier</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ofType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Of Type</xs:documentation>
+        </xs:annotation>
+      </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
   <xs:complexType name="SearchModifierCode">
@@ -328,7 +338,7 @@
       </xs:enumeration>
       <xs:enumeration value="lt">
         <xs:annotation>
-          <xs:documentation xml:lang="en">Less Then</xs:documentation>
+          <xs:documentation xml:lang="en">Less Than</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="ge">
@@ -360,7 +370,7 @@
   </xs:simpleType>
   <xs:complexType name="SearchComparator">
     <xs:annotation>
-      <xs:documentation xml:lang="en">What Search Comparator Codes are supported in search</xs:documentation>
+      <xs:documentation xml:lang="en">What Search Comparator Codes are supported in search.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>

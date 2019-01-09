@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Jun 22, 2018 15:13+0000 for FHIR v3.4.0 
+  Generated on Thu, Dec 27, 2018 22:37+1100 for FHIR v4.0.0 
 
   Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -125,26 +125,16 @@
               <xs:documentation xml:lang="en">The function of the agent with respect to the activity. The security role enabling the agent with respect to the activity.</xs:documentation>
            </xs:annotation>
           </xs:element>
-                      <xs:element name="whoIdentifier" type="Identifier" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">The individual, device or organization that participated in the event. (choose any one of who*, but only one)</xs:documentation>
-              </xs:annotation>
-             </xs:element>
-            <xs:element name="whoReference" type="Reference" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">The individual, device or organization that participated in the event. (choose any one of who*, but only one)</xs:documentation>
-              </xs:annotation>
-             </xs:element>
-                      <xs:element name="onBehalfOfIdentifier" type="Identifier" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)</xs:documentation>
-              </xs:annotation>
-             </xs:element>
-            <xs:element name="onBehalfOfReference" type="Reference" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">The individual, device, or organization for whom the change was made. (choose any one of onBehalfOf*, but only one)</xs:documentation>
-              </xs:annotation>
-             </xs:element>
+          <xs:element name="who" minOccurs="1" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The individual, device or organization that participated in the event.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
+          <xs:element name="onBehalfOf" minOccurs="0" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">The individual, device, or organization for whom the change was made.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -161,16 +151,11 @@
               <xs:documentation xml:lang="en">How the entity was used during the activity.</xs:documentation>
            </xs:annotation>
           </xs:element>
-                      <xs:element name="whatIdentifier" type="Identifier" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)</xs:documentation>
-              </xs:annotation>
-             </xs:element>
-            <xs:element name="whatReference" type="Reference" minOccurs="0">
-              <xs:annotation>
-                <xs:documentation xml:lang="en">Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative. (choose any one of what*, but only one)</xs:documentation>
-              </xs:annotation>
-             </xs:element>
+          <xs:element name="what" minOccurs="1" maxOccurs="1" type="Reference">
+            <xs:annotation>
+              <xs:documentation xml:lang="en">Identity of the  Entity used. May be a logical or physical uri and maybe absolute or relative.</xs:documentation>
+           </xs:annotation>
+          </xs:element>
           <xs:element name="agent" type="Provenance.Agent" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">The entity is attributed to an agent to express the agent's responsibility for that entity, possibly along with other agents. This description can be understood as shorthand for saying that the agent was responsible for the activity which generated the entity.</xs:documentation>

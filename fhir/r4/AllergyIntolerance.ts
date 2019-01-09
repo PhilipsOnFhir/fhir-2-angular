@@ -1,8 +1,6 @@
 import { AllergyIntoleranceCategoryEnum } from './AllergyIntoleranceCategoryEnum'
-import { AllergyIntoleranceClinicalStatusEnum } from './AllergyIntoleranceClinicalStatusEnum'
 import { AllergyIntoleranceCriticalityEnum } from './AllergyIntoleranceCriticalityEnum'
 import { AllergyIntoleranceTypeEnum } from './AllergyIntoleranceTypeEnum'
-import { AllergyIntoleranceVerificationStatusEnum } from './AllergyIntoleranceVerificationStatusEnum'
 import { AllergyIntolerance_Reaction } from './AllergyIntolerance_Reaction'
 import { Annotation } from './Annotation'
 import { CodeableConcept } from './CodeableConcept'
@@ -17,8 +15,8 @@ export class AllergyIntolerance      extends DomainResource
 
    static def : string = 'AllergyIntolerance';
    identifier : Identifier [];
-   clinicalStatus : AllergyIntoleranceClinicalStatusEnum ;
-   verificationStatus : AllergyIntoleranceVerificationStatusEnum ;
+   clinicalStatus : CodeableConcept ;
+   verificationStatus : CodeableConcept ;
    type : AllergyIntoleranceTypeEnum ;
    category : AllergyIntoleranceCategoryEnum [];
    criticality : AllergyIntoleranceCriticalityEnum ;

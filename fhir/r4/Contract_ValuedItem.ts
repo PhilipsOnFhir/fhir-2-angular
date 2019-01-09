@@ -19,4 +19,10 @@ export class Contract_ValuedItem      extends BackboneElement
    factor : string ;
    points : string ;
    net : Money ;
+   payment : string ;
+   paymentDate : string ;
+   responsible : Reference ;
+   recipient : Reference ;
+   linkId : string [];
+   securityLabelNumber : string [];
 }

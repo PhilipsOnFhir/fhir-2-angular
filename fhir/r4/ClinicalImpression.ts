@@ -18,7 +18,7 @@ export class ClinicalImpression      extends DomainResource
    code : CodeableConcept ;
    description : string ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    effectiveDateTime : string ;
    effectivePeriod : Period ;
    date : string ;
@@ -31,6 +31,6 @@ export class ClinicalImpression      extends DomainResource
    finding : ClinicalImpression_Finding [];
    prognosisCodeableConcept : CodeableConcept [];
    prognosisReference : Reference [];
-   action : Reference [];
+   supportingInfo : Reference [];
    note : Annotation [];
 }

@@ -1,3 +1,4 @@
+import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
 import { Identifier } from './Identifier'
 import { MeasureReportStatusEnum } from './MeasureReportStatusEnum'
@@ -18,6 +19,7 @@ export class MeasureReport      extends DomainResource
    date : string ;
    reporter : Reference ;
    period : Period ;
+   improvementNotation : CodeableConcept ;
    group : MeasureReport_Group [];
-   evaluatedResources : Reference ;
+   evaluatedResource : Reference [];
 }

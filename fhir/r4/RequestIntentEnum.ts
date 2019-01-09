@@ -1,6 +1,7 @@
 import { DomainResource } from './DomainResource'
 
 export enum RequestIntentEnum{
+    DIRECTIVE = 'directive',
     FILLER_ORDER = 'filler-order',
     INSTANCE_ORDER = 'instance-order',
     OPTION = 'option',

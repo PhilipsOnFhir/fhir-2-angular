@@ -10,14 +10,14 @@ export class GuidanceResponse      extends DomainResource
 {
 
    static def : string = 'GuidanceResponse';
-   requestId : string ;
+   requestIdentifier : Identifier ;
    identifier : Identifier [];
    moduleUri : string ;
    moduleCanonical : string ;
    moduleCodeableConcept : CodeableConcept ;
    status : GuidanceResponseStatusEnum ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    occurrenceDateTime : string ;
    performer : Reference ;
    reasonCode : CodeableConcept [];

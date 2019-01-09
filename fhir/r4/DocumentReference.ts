@@ -1,7 +1,6 @@
 import { CodeableConcept } from './CodeableConcept'
 import { CompositionStatusEnum } from './CompositionStatusEnum'
 import { DocumentReferenceStatusEnum } from './DocumentReferenceStatusEnum'
-import { DocumentReference_Agent } from './DocumentReference_Agent'
 import { DocumentReference_Content } from './DocumentReference_Content'
 import { DocumentReference_Context } from './DocumentReference_Context'
 import { DocumentReference_RelatesTo } from './DocumentReference_RelatesTo'
@@ -18,11 +17,10 @@ export class DocumentReference      extends DomainResource
    status : DocumentReferenceStatusEnum ;
    docStatus : CompositionStatusEnum ;
    type : CodeableConcept ;
-   class : CodeableConcept ;
+   category : CodeableConcept [];
    subject : Reference ;
-   created : string ;
    date : string ;
-   agent : DocumentReference_Agent [];
+   author : Reference [];
    authenticator : Reference ;
    custodian : Reference ;
    relatesTo : DocumentReference_RelatesTo [];

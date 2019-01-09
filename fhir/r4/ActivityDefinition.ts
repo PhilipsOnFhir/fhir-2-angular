@@ -2,7 +2,6 @@ import { ActivityDefinition_DynamicValue } from './ActivityDefinition_DynamicVal
 import { ActivityDefinition_Participant } from './ActivityDefinition_Participant'
 import { CodeableConcept } from './CodeableConcept'
 import { ContactDetail } from './ContactDetail'
-import { Contributor } from './Contributor'
 import { DomainResource } from './DomainResource'
 import { Dosage } from './Dosage'
 import { Identifier } from './Identifier'
@@ -12,7 +11,9 @@ import { Quantity } from './Quantity'
 import { Range } from './Range'
 import { Reference } from './Reference'
 import { RelatedArtifact } from './RelatedArtifact'
-import { ResourceTypeEnum } from './ResourceTypeEnum'
+import { RequestIntentEnum } from './RequestIntentEnum'
+import { RequestPriorityEnum } from './RequestPriorityEnum'
+import { RequestResourceTypeEnum } from './RequestResourceTypeEnum'
 import { Timing } from './Timing'
 import { UsageContext } from './UsageContext'
 
@@ -43,11 +44,17 @@ export class ActivityDefinition      extends DomainResource
    lastReviewDate : string ;
    effectivePeriod : Period ;
    topic : CodeableConcept [];
-   contributor : Contributor [];
+   author : ContactDetail [];
+   editor : ContactDetail [];
+   reviewer : ContactDetail [];
+   endorser : ContactDetail [];
    relatedArtifact : RelatedArtifact [];
    library : string [];
-   kind : ResourceTypeEnum ;
+   kind : RequestResourceTypeEnum ;
+   profile : string ;
    code : CodeableConcept ;
+   intent : RequestIntentEnum ;
+   priority : RequestPriorityEnum ;
    doNotPerform : string ;
    timingTiming : Timing ;
    timingDateTime : string ;
@@ -63,6 +70,8 @@ export class ActivityDefinition      extends DomainResource
    dosage : Dosage [];
    bodySite : CodeableConcept [];
    specimenRequirement : Reference [];
+   observationRequirement : Reference [];
+   observationResultRequirement : Reference [];
    transform : string ;
    dynamicValue : ActivityDefinition_DynamicValue [];
 }

@@ -7,9 +7,8 @@ export class SpecimenDefinition_Handling      extends BackboneElement
 {
 
    static def : string = 'SpecimenDefinition_Handling';
-   conditionSet : CodeableConcept ;
-   tempRange : Range ;
+   temperatureQualifier : CodeableConcept ;
+   temperatureRange : Range ;
    maxDuration : string ;
-   lightExposure : string ;
    instruction : string ;
 }

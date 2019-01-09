@@ -5,6 +5,7 @@ import { DomainResource } from './DomainResource'
 import { Identifier } from './Identifier'
 import { Period } from './Period'
 import { Reference } from './Reference'
+import { RequestIntentEnum } from './RequestIntentEnum'
 import { RequestPriorityEnum } from './RequestPriorityEnum'
 import { RequestStatusEnum } from './RequestStatusEnum'
 import { Timing } from './Timing'
@@ -14,18 +15,19 @@ export class DeviceRequest      extends DomainResource
 
    static def : string = 'DeviceRequest';
    identifier : Identifier [];
-   instantiates : string [];
+   instantiatesCanonical : string [];
+   instantiatesUri : string [];
    basedOn : Reference [];
    priorRequest : Reference [];
    groupIdentifier : Identifier ;
    status : RequestStatusEnum ;
-   intent : CodeableConcept ;
+   intent : RequestIntentEnum ;
    priority : RequestPriorityEnum ;
    codeReference : Reference ;
    codeCodeableConcept : CodeableConcept ;
    parameter : DeviceRequest_Parameter [];
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    occurrenceDateTime : string ;
    occurrencePeriod : Period ;
    occurrenceTiming : Timing ;

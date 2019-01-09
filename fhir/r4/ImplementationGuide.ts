@@ -1,6 +1,7 @@
 import { CodeableConcept } from './CodeableConcept'
 import { ContactDetail } from './ContactDetail'
 import { DomainResource } from './DomainResource'
+import { FHIRVersionEnum } from './FHIRVersionEnum'
 import { ImplementationGuide_Definition } from './ImplementationGuide_Definition'
 import { ImplementationGuide_DependsOn } from './ImplementationGuide_DependsOn'
 import { ImplementationGuide_Global } from './ImplementationGuide_Global'
@@ -16,6 +17,7 @@ export class ImplementationGuide      extends DomainResource
    url : string ;
    version : string ;
    name : string ;
+   title : string ;
    status : PublicationStatusEnum ;
    experimental : string ;
    date : string ;
@@ -27,7 +29,7 @@ export class ImplementationGuide      extends DomainResource
    copyright : string ;
    packageId : string ;
    license : SPDXLicenseEnum ;
-   fhirVersion : string ;
+   fhirVersion : FHIRVersionEnum [];
    dependsOn : ImplementationGuide_DependsOn [];
    global : ImplementationGuide_Global [];
    definition : ImplementationGuide_Definition ;

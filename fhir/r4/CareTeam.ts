@@ -17,7 +17,7 @@ export class CareTeam      extends DomainResource
    category : CodeableConcept [];
    name : string ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    period : Period ;
    participant : CareTeam_Participant [];
    reasonCode : CodeableConcept [];

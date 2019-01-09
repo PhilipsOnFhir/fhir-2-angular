@@ -1,6 +1,6 @@
 import { DomainResource } from './DomainResource'
 
-export enum MedicationRequestStatusEnum{
+export enum medicationrequestStatusEnum{
     ACTIVE = 'active',
     CANCELLED = 'cancelled',
     COMPLETED = 'completed',

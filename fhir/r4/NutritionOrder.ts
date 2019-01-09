@@ -14,11 +14,13 @@ export class NutritionOrder      extends DomainResource
 
    static def : string = 'NutritionOrder';
    identifier : Identifier [];
+   instantiatesCanonical : string [];
+   instantiatesUri : string [];
    instantiates : string [];
    status : RequestStatusEnum ;
    intent : RequestIntentEnum ;
    patient : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    dateTime : string ;
    orderer : Reference ;
    allergyIntolerance : Reference [];

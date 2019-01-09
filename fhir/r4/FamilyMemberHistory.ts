@@ -1,4 +1,3 @@
-import { AdministrativeGenderEnum } from './AdministrativeGenderEnum'
 import { Annotation } from './Annotation'
 import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
@@ -22,7 +21,7 @@ export class FamilyMemberHistory      extends DomainResource
    date : string ;
    name : string ;
    relationship : CodeableConcept ;
-   gender : AdministrativeGenderEnum ;
+   sex : CodeableConcept ;
    bornPeriod : Period ;
    bornDate : string ;
    bornString : string ;

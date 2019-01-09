@@ -23,7 +23,7 @@ export class RequestGroup      extends DomainResource
    priority : RequestPriorityEnum ;
    code : CodeableConcept ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    authoredOn : string ;
    author : Reference ;
    reasonCode : CodeableConcept [];

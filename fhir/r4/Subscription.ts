@@ -1,4 +1,3 @@
-import { Coding } from './Coding'
 import { ContactPoint } from './ContactPoint'
 import { DomainResource } from './DomainResource'
 import { SubscriptionStatusEnum } from './SubscriptionStatusEnum'
@@ -15,5 +14,4 @@ export class Subscription      extends DomainResource
    criteria : string ;
    error : string ;
    channel : Subscription_Channel ;
-   tag : Coding [];
 }

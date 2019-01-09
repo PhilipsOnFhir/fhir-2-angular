@@ -8,7 +8,7 @@ export class CareTeam_Participant      extends BackboneElement
 {
 
    static def : string = 'CareTeam_Participant';
-   role : CodeableConcept ;
+   role : CodeableConcept [];
    member : Reference ;
    onBehalfOf : Reference ;
    period : Period ;

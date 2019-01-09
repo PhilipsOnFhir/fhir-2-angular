@@ -15,9 +15,9 @@ export class SubstanceReferenceInformation_Target      extends BackboneElement
    interaction : CodeableConcept ;
    organism : CodeableConcept ;
    organismType : CodeableConcept ;
-   source : Reference [];
    amountQuantity : Quantity ;
    amountRange : Range ;
    amountString : string ;
    amountType : CodeableConcept ;
+   source : Reference [];
 }

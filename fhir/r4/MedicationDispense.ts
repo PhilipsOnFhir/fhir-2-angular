@@ -3,7 +3,6 @@ import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
 import { Dosage } from './Dosage'
 import { Identifier } from './Identifier'
-import { MedicationDispenseStatusEnum } from './MedicationDispenseStatusEnum'
 import { MedicationDispense_Performer } from './MedicationDispense_Performer'
 import { MedicationDispense_Substitution } from './MedicationDispense_Substitution'
 import { Quantity } from './Quantity'
@@ -15,7 +14,9 @@ export class MedicationDispense      extends DomainResource
    static def : string = 'MedicationDispense';
    identifier : Identifier [];
    partOf : Reference [];
-   status : MedicationDispenseStatusEnum ;
+   status : string ;
+   statusReasonCodeableConcept : CodeableConcept ;
+   statusReasonReference : Reference ;
    category : CodeableConcept ;
    medicationCodeableConcept : CodeableConcept ;
    medicationReference : Reference ;
@@ -36,7 +37,5 @@ export class MedicationDispense      extends DomainResource
    dosageInstruction : Dosage [];
    substitution : MedicationDispense_Substitution ;
    detectedIssue : Reference [];
-   statusReasonCodeableConcept : CodeableConcept ;
-   statusReasonReference : Reference ;
    eventHistory : Reference [];
 }

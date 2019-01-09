@@ -27,7 +27,7 @@
   POSSIBILITY OF SUCH DAMAGE.
   
 
-  Generated on Fri, Jun 22, 2018 15:13+0000 for FHIR v3.4.0 
+  Generated on Fri, Oct 12, 2018 22:02+1100 for FHIR v3.6.0 
 
   Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
   valid. Implementers will still need to be familiar with the content of the specification and with
@@ -38,12 +38,12 @@
   <xs:include schemaLocation="fhir-base.xsd"/>
   <xs:element name="MedicinalProductDeviceSpec" type="MedicinalProductDeviceSpec">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A detailed description of a device, typically as part of a regulated medicinal product. It is not intended to relace the Device resource, which covers use of device instances.</xs:documentation>
+      <xs:documentation xml:lang="en">A detailed description of a device, typically as part of a regulated medicinal product. It is not intended to replace the Device resource, which covers use of device instances.</xs:documentation>
     </xs:annotation>
   </xs:element>
   <xs:complexType name="MedicinalProductDeviceSpec">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A detailed description of a device, typically as part of a regulated medicinal product. It is not intended to relace the Device resource, which covers use of device instances.</xs:documentation>
+      <xs:documentation xml:lang="en">A detailed description of a device, typically as part of a regulated medicinal product. It is not intended to replace the Device resource, which covers use of device instances.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
@@ -99,7 +99,7 @@
               <xs:documentation xml:lang="en">A nomenclature term for the device.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="shelfLife" minOccurs="0" maxOccurs="unbounded" type="ProductShelfLife">
+          <xs:element name="shelfLifeStorage" minOccurs="0" maxOccurs="unbounded" type="ProductShelfLife">
             <xs:annotation>
               <xs:documentation xml:lang="en">Shelf Life and storage information.</xs:documentation>
            </xs:annotation>
@@ -135,7 +135,7 @@
   </xs:complexType>
   <xs:complexType name="MedicinalProductDeviceSpec.Material">
     <xs:annotation>
-      <xs:documentation xml:lang="en">A detailed description of a device, typically as part of a regulated medicinal product. It is not intended to relace the Device resource, which covers use of device instances.</xs:documentation>
+      <xs:documentation xml:lang="en">A detailed description of a device, typically as part of a regulated medicinal product. It is not intended to replace the Device resource, which covers use of device instances.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">

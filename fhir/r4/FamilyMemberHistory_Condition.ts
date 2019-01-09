@@ -11,6 +11,7 @@ export class FamilyMemberHistory_Condition      extends BackboneElement
    static def : string = 'FamilyMemberHistory_Condition';
    code : CodeableConcept ;
    outcome : CodeableConcept ;
+   contributedToDeath : string ;
    onsetAge : string ;
    onsetRange : Range ;
    onsetPeriod : Period ;

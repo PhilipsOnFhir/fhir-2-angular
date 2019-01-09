@@ -15,7 +15,7 @@ export class CodeSystem      extends DomainResource
 
    static def : string = 'CodeSystem';
    url : string ;
-   identifier : Identifier ;
+   identifier : Identifier [];
    version : string ;
    name : string ;
    title : string ;

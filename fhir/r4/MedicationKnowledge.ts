@@ -1,6 +1,5 @@
 import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
-import { MedicationKnowledgeStatusEnum } from './MedicationKnowledgeStatusEnum'
 import { MedicationKnowledge_AdministrationGuidelines } from './MedicationKnowledge_AdministrationGuidelines'
 import { MedicationKnowledge_Cost } from './MedicationKnowledge_Cost'
 import { MedicationKnowledge_DrugCharacteristic } from './MedicationKnowledge_DrugCharacteristic'
@@ -20,7 +19,7 @@ export class MedicationKnowledge      extends DomainResource
 
    static def : string = 'MedicationKnowledge';
    code : CodeableConcept ;
-   status : MedicationKnowledgeStatusEnum ;
+   status : string ;
    manufacturer : Reference ;
    doseForm : CodeableConcept ;
    amount : Quantity ;

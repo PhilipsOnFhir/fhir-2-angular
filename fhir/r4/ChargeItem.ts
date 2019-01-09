@@ -15,7 +15,8 @@ export class ChargeItem      extends DomainResource
 
    static def : string = 'ChargeItem';
    identifier : Identifier [];
-   definition : string [];
+   definitionUri : string [];
+   definitionCanonical : string [];
    status : ChargeItemStatusEnum ;
    partOf : Reference [];
    code : CodeableConcept ;

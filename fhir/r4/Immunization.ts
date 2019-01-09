@@ -6,6 +6,7 @@ import { ImmunizationStatusCodesEnum } from './ImmunizationStatusCodesEnum'
 import { Immunization_Education } from './Immunization_Education'
 import { Immunization_Performer } from './Immunization_Performer'
 import { Immunization_ProtocolApplied } from './Immunization_ProtocolApplied'
+import { Immunization_Reaction } from './Immunization_Reaction'
 import { Quantity } from './Quantity'
 import { Reference } from './Reference'
 
@@ -21,6 +22,7 @@ export class Immunization      extends DomainResource
    encounter : Reference ;
    occurrenceDateTime : string ;
    occurrenceString : string ;
+   recorded : string ;
    primarySource : string ;
    reportOrigin : CodeableConcept ;
    location : Reference ;
@@ -39,5 +41,6 @@ export class Immunization      extends DomainResource
    education : Immunization_Education [];
    programEligibility : CodeableConcept [];
    fundingSource : CodeableConcept ;
+   reaction : Immunization_Reaction [];
    protocolApplied : Immunization_ProtocolApplied [];
 }

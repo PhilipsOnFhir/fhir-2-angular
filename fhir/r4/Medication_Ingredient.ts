@@ -11,5 +11,5 @@ export class Medication_Ingredient      extends BackboneElement
    itemCodeableConcept : CodeableConcept ;
    itemReference : Reference ;
    isActive : string ;
-   amount : Ratio ;
+   strength : Ratio ;
 }

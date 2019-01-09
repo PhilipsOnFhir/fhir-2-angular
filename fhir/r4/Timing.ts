@@ -1,9 +1,9 @@
+import { BackboneElement } from './BackboneElement'
 import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
-import { Element } from './Element'
 import { Timing_Repeat } from './Timing_Repeat'
 
-export class Timing      extends Element
+export class Timing      extends BackboneElement
 {
 
    static def : string = 'Timing';

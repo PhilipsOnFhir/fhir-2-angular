@@ -8,4 +8,5 @@ export class TerminologyCapabilities_CodeSystem      extends BackboneElement
    static def : string = 'TerminologyCapabilities_CodeSystem';
    uri : string ;
    version : TerminologyCapabilities_Version [];
+   subsumption : string ;
 }

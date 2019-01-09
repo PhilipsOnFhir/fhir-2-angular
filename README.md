@@ -1,9 +1,11 @@
-Download from https://www.hl7.org/fhir/downloads.html the definitions.json.zip.
-This contains the structure definition of the current fhir build.
-Unpack the file into the src/main/resources folder.
+This contains java program that generates Angular2+ representations of the different FHIR classes and enumerations. 
+The classes are based on the code-gen download that is published on the FHIR web-site (https://www.hl7.org/fhir/fhir-codegen-xsd.zip).
+This file contains the structure definition of the current fhir build.
 
-Run the GenerateJavaScript class.
+The src/main/resources contains an instance of this file for the different FHIR versions..
+
+Running the GenerateJavaScript class, will read these files and generate the angular classes.
 
 Make sure Temp/ts exists
 
-set idea to java version 8. 
+Set idea to java version 8. 

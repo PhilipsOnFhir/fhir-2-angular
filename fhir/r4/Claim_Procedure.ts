@@ -8,7 +8,9 @@ export class Claim_Procedure      extends BackboneElement
 
    static def : string = 'Claim_Procedure';
    sequence : string ;
+   type : CodeableConcept [];
    date : string ;
    procedureCodeableConcept : CodeableConcept ;
    procedureReference : Reference ;
+   udi : Reference [];
 }

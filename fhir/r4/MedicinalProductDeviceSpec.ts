@@ -21,7 +21,7 @@ export class MedicinalProductDeviceSpec      extends DomainResource
    sterilisationRequirement : CodeableConcept ;
    usage : CodeableConcept ;
    nomenclature : CodeableConcept [];
-   shelfLife : ProductShelfLife [];
+   shelfLifeStorage : ProductShelfLife [];
    physicalCharacteristics : ProdCharacteristic ;
    otherCharacteristics : CodeableConcept [];
    batchIdentifier : Identifier [];

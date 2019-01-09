@@ -19,7 +19,7 @@ export class Media      extends DomainResource
    modality : CodeableConcept ;
    view : CodeableConcept ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    createdDateTime : string ;
    createdPeriod : Period ;
    issued : string ;

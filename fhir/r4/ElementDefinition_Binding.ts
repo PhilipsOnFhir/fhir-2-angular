@@ -1,8 +1,8 @@
+import { BackboneElement } from './BackboneElement'
 import { BindingStrengthEnum } from './BindingStrengthEnum'
 import { DomainResource } from './DomainResource'
-import { Element } from './Element'
 
-export class ElementDefinition_Binding      extends Element
+export class ElementDefinition_Binding      extends BackboneElement
 {
 
    static def : string = 'ElementDefinition_Binding';

@@ -3,6 +3,9 @@ import { CodeableConcept } from './CodeableConcept'
 import { DomainResource } from './DomainResource'
 import { Identifier } from './Identifier'
 import { Period } from './Period'
+import { Quantity } from './Quantity'
+import { Range } from './Range'
+import { Ratio } from './Ratio'
 import { Reference } from './Reference'
 import { RequestIntentEnum } from './RequestIntentEnum'
 import { RequestPriorityEnum } from './RequestPriorityEnum'
@@ -14,7 +17,8 @@ export class ServiceRequest      extends DomainResource
 
    static def : string = 'ServiceRequest';
    identifier : Identifier [];
-   instantiates : string [];
+   instantiatesCanonical : string [];
+   instantiatesUri : string [];
    basedOn : Reference [];
    replaces : Reference [];
    requisition : Identifier ;
@@ -25,8 +29,11 @@ export class ServiceRequest      extends DomainResource
    doNotPerform : string ;
    code : CodeableConcept ;
    orderDetail : CodeableConcept [];
+   quantityQuantity : Quantity ;
+   quantityRatio : Ratio ;
+   quantityRange : Range ;
    subject : Reference ;
-   context : Reference ;
+   encounter : Reference ;
    occurrenceDateTime : string ;
    occurrencePeriod : Period ;
    occurrenceTiming : Timing ;
@@ -36,6 +43,8 @@ export class ServiceRequest      extends DomainResource
    requester : Reference ;
    performerType : CodeableConcept ;
    performer : Reference [];
+   locationCode : CodeableConcept [];
+   locationReference : Reference [];
    reasonCode : CodeableConcept [];
    reasonReference : Reference [];
    insurance : Reference [];
