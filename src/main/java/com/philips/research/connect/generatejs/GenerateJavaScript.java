@@ -24,6 +24,7 @@ public class GenerateJavaScript {
 
     public static void main(String[] args ) throws ParserConfigurationException, IOException, SAXException {
 
+        generateOne("dstu2");
         generateOne("stu3");
         generateOne("r4");
         generateOne("r4_1");

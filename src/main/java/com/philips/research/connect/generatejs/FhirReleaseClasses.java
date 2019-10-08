@@ -126,7 +126,7 @@ public class FhirReleaseClasses {
     private void writeFile(String subDir, FhirClass fhirClass)  {
         try {
             String filename =fhirClass.getName();
-            System.out.println("write file "+filename);
+            System.out.println("write file - "+version +" - "+filename);
             String content = fhirClass.toJavaScript();
             BufferedWriter writer = null;
             String prefix = subDir.toUpperCase();
