@@ -1,0 +1,8 @@
+import { DSTU2_DomainResource } from './DSTU2_DomainResource';
+
+export enum DSTU2_IdentityAssuranceLevelEnum{
+    LEVEL1 = 'level1',
+    LEVEL2 = 'level2',
+    LEVEL3 = 'level3',
+    LEVEL4 = 'level4',
+}

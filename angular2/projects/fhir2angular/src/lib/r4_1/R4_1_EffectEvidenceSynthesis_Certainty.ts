@@ -1,0 +1,14 @@
+import { R4_1_Annotation } from './R4_1_Annotation'
+import { R4_1_BackboneElement } from './R4_1_BackboneElement'
+import { R4_1_CodeableConcept } from './R4_1_CodeableConcept'
+import { R4_1_DomainResource } from './R4_1_DomainResource'
+import { R4_1_EffectEvidenceSynthesis_CertaintySubcomponent } from './R4_1_EffectEvidenceSynthesis_CertaintySubcomponent'
+
+export class R4_1_EffectEvidenceSynthesis_Certainty      extends R4_1_BackboneElement
+{
+
+   static def : string = 'EffectEvidenceSynthesis_Certainty';
+   rating : R4_1_CodeableConcept [];
+   note : R4_1_Annotation [];
+   certaintySubcomponent : R4_1_EffectEvidenceSynthesis_CertaintySubcomponent [];
+}

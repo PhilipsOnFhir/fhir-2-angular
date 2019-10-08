@@ -1,0 +1,13 @@
+import { STU3_BackboneElement } from './STU3_BackboneElement'
+import { STU3_DomainResource } from './STU3_DomainResource'
+import { STU3_EligibilityResponse_BenefitBalance } from './STU3_EligibilityResponse_BenefitBalance'
+import { STU3_Reference } from './STU3_Reference'
+
+export class STU3_EligibilityResponse_Insurance      extends STU3_BackboneElement
+{
+
+   static def : string = 'EligibilityResponse_Insurance';
+   coverage : STU3_Reference ;
+   contract : STU3_Reference ;
+   benefitBalance : STU3_EligibilityResponse_BenefitBalance [];
+}

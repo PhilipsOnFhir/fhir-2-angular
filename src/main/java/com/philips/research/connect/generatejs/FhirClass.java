@@ -9,21 +9,23 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class FhirClass {
-    private final String name;
+    private final String version;
+    private String className;
     private String base = null;
     private List<FhirClassElement> elements = new ArrayList<>();
     private Set<String> types = new TreeSet<>();
     private Set<String> enumValues = new TreeSet<>();
 
-    FhirClass(String name ){
+    FhirClass( String version, String name ){
 
-        String className = name.replace(".", "_");
+        this.version = version;
+        className = name.replace(".", "_");
+//        className = name.replace(".", "");
 
         if (className.endsWith("-list")) {
             // enum
             className = name.substring(0, name.indexOf("-"))+"Enum";
         }
-        this.name = className;
     }
 
 
@@ -33,7 +35,7 @@ public class FhirClass {
     }
 
     public void addElement(String name, String type, String minOccurs, String maxOccurs) {
-        FhirClassElement fhirClassElement = new FhirClassElement( name, type, minOccurs, maxOccurs);
+        FhirClassElement fhirClassElement = new FhirClassElement( version, name, type, minOccurs, maxOccurs );
         this.elements.add( fhirClassElement );
         if ( Character.isUpperCase( fhirClassElement.getType().charAt(0))) {
             this.types.add(fhirClassElement.getType());
@@ -64,15 +66,16 @@ public class FhirClass {
 
     private String toEnumClassJavaScript() {
         this.types.remove(this.getName());
-        this.types.remove("string");
+        this.types.remove(FhirBaseType.STRING );
+        this.types.remove(FhirBaseType.BOOLEAN );
 
         String result = "";
         for ( String importType: types ){
-            result += String.format("import { %s } from './%s'\n",importType, importType );
+            result += String.format("import { %s%s } from './%s%s';\n",version,importType, version,importType );
         }
         result += "\n";
 
-        result+="export enum "+name;
+        result+="export enum "+version+className;
         result+="{\n";
         for ( String enumValue: this.enumValues ){
             String enumString = enumValue.toUpperCase();
@@ -85,10 +88,10 @@ public class FhirClass {
             enumString = checkAndReplace( enumString, "<=", "SMALLEREQUALTHAN");
             enumString = checkAndReplace( enumString, ">", "LARGERTHAN");
             enumString = checkAndReplace( enumString, ">=", "LARGEREQUALTHAN");
-            if ( NumberUtils.isCreatable(enumString ) ){
+            if ( NumberUtils.isNumber(enumString ) ){
                 enumString = "NUMBER"+enumString;
             }
-            if ( NumberUtils.isCreatable(String.valueOf(enumString.charAt(0)))){
+            if ( NumberUtils.isNumber(String.valueOf(enumString.charAt(0)))){
                 enumString="N"+enumString;
             }
             result+="    " + enumString+ " = '"+enumValue+"',\n";
@@ -110,23 +113,24 @@ public class FhirClass {
     String toClassJavaScript() {
 
         this.types.remove(this.getName());
-        this.types.remove("string");
+        this.types.remove(FhirBaseType.STRING );
+        this.types.remove(FhirBaseType.BOOLEAN );
 
         if ( this.base!=null ){ types.add(this.base);}
 
         String result = "";
         for ( String importType: types ){
             // import { Account_coverage } from './Account_coverage'
-            result += String.format("import { %s } from './%s'\n",importType, importType );
+            result += String.format("import { %s%s } from './%s%s'\n",version,importType, version,importType );
         }
         result += "\n";
 
-        result+="export class "+name;
+        result+="export class "+version+className;
         if ( base!=null ){
-            result+= "      extends "+base+"\n";
+            result+= "      extends "+version+base+"\n";
         }
         result+="{\n";
-        result+="\n   static def : string = '"+name+"';\n";
+        result+="\n   static def : string = '"+className+"';\n";
         for ( FhirClassElement elementName: elements ){
             result+=elementName.toJavaScript();
         }
@@ -145,7 +149,7 @@ public class FhirClass {
     }
 
     String getName() {
-        return this.name;
+        return this.className;
     }
 
 

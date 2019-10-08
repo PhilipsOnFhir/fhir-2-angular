@@ -1,0 +1,46 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+      "fhir2angular": [
+        "dist/fhir2angular"
+      ],
+      "fhir2angular/*": [
+        "dist/fhir2angular/*"
+      ],
+      "fhir2angular-r4": [
+        "dist/fhir2angular-r4"
+      ],
+      "fhir2angular-r4/*": [
+        "dist/fhir2angular-r4/*"
+      ],
+      "fhir2angular-stu3": [
+        "dist/fhir2angular-stu3"
+      ],
+      "fhir2angular-stu3/*": [
+        "dist/fhir2angular-stu3/*"
+      ],
+      "fhir2angular-r5": [
+        "dist/fhir2angular-r5"
+      ],
+      "fhir2angular-r5/*": [
+        "dist/fhir2angular-r5/*"
+      ]
+    }
+  }
+}

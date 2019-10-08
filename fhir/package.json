@@ -1,6 +1,0 @@
-{
-  "name": "@philips-on-fhir/fhir-2-angular",
-  "version": "0.1.0",
-  "description": "Angular 2+ classes for FHIR Resources",
-  "license": "ISC"
-}
